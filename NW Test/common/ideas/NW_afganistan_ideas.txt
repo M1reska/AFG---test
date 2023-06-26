@@ -1,0 +1,914 @@
+ideas = {
+	country = {
+		
+		AFG_Mohammed_Zahir_Shah = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			traits = { AFG_speaks_Pashto_poorly AFG_supporter_of_modernization AFG_ladies_man }
+		}
+		
+		AFG_general_plan_of_economic_development = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = { 
+				 global_building_slots_factor = 0.05
+				 production_speed_hospital_factor = 0.15
+				 production_speed_infrastructure_factor = 0.15
+				 research_speed_factor = 0.01
+			}
+		}
+		
+		AFG_censorship_of_the_press_idea = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = { 
+				 drift_defence_factor = 0.2
+				 stability_factor = 0.06
+				 democratic_drift = -0.02
+				 research_speed_factor = -0.02
+			}
+		}
+		
+		AFG_censorship_of_the_press_idea_1 = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = { 
+				 drift_defence_factor = 0.1
+				 stability_factor = 0.03
+				 democratic_drift = -0.02
+				 research_speed_factor = -0.01
+			}
+		}
+		
+		AFG_bilingualism_support = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = { 
+				 compliance_growth = 0.1
+				 resistance_target = -0.05
+			}
+		}
+		
+		AFG_bilingualism_support_2 = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = { 
+				 compliance_growth = 0.1
+				 resistance_target = -0.05
+				 research_speed_factor = 0.04
+			}
+		}
+		
+		AFG_bilingualism_support_3 = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = { 
+				 compliance_growth = 0.1
+				 resistance_target = -0.05
+				 research_speed_factor = 0.04
+			}
+		}
+		
+		AFG_foreign_experience = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = { 
+				 naval_doctrine_cost_factor = -0.25
+				 land_doctrine_cost_factor = -0.25
+				 air_doctrine_cost_factor = -0.25
+				 research_speed_factor = 0.04
+				 experience_gain_army_factor = 0.1
+				 experience_gain_air_factor = 0.1 
+			}
+			research_bonus = {
+				industry = 0.1
+			}
+		}
+		
+		AFG_cement_plant = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = { 
+				 consumer_goods_factor = 0.01
+				 production_speed_buildings_factor = 0.07
+			}
+		}
+		
+		AFG_Vatan_idea = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = { 
+				 industrial_capacity_factory = 0.03
+				 production_lack_of_resource_penalty_factor = -0.05
+			}
+		}
+		
+		AFG_Da_Afghanistan_bank_idea = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = { 
+				 production_speed_buildings_factor = 0.07
+				 consumer_goods_factor = 0.01
+			}
+		}
+		
+		AFG_Da_Afghanistan_bank_idea_1 = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = { 
+				 production_speed_buildings_factor = 0.07
+				 consumer_goods_factor = 0.01
+				 production_factory_max_efficiency_factor = 0.05
+			}
+		}
+		
+		AFG_privatization = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = { 
+				 production_speed_buildings_factor = 1.5
+			}
+		}
+		
+		AFG_regulate_prison_conditions_idea = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = { 
+				production_factory_efficiency_gain_factor = 0.02
+				stability_factor = 0.05
+			}
+		}
+		
+		AFG_chambers_of_Kabul_idea = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = { 
+				intelligence_agency_defense = 0.3
+				root_out_resistance_effectiveness_factor = 0.4
+			}
+		}
+		
+		AFG_the_Law_on_Municipal_Elections_idea = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = { 
+				democratic_drift = 0.02
+				monarchy_drift = 0.01
+				custom_modifier_tooltip = AFG_the_Law_on_Municipal_Elections_tt
+			}
+			on_add = {
+				add_power_balance_modifier = { id = AFG_power_balance modifier = AFG_the_Law_on_Municipal_Elections_modifier }
+			}
+			on_remove = {
+				remove_power_balance_modifier = { id = AFG_power_balance modifier = AFG_the_Law_on_Municipal_Elections_modifier }
+			}
+		}
+		
+		AFG_committee_for_the_Improvement_of_the_Welfare_of_the_People_idea = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = { 
+				monthly_population = 0.25
+				political_power_factor = -0.05
+				production_factory_efficiency_gain_factor = 0.04
+			}
+		}
+		
+		AFG_reorganization_of_the_Ministry_of_War_idea = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = { 
+				naval_doctrine_cost_factor = -0.2
+				land_doctrine_cost_factor = -0.2
+				air_doctrine_cost_factor = -0.2
+				experience_gain_army_factor = 0.15
+				experience_loss_factor = -0.05
+			}
+		}
+		
+		AFG_reorganization_of_the_Ministry_of_War_ns = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = { 
+				experience_gain_army_factor = -0.25
+				political_power_factor = -0.1
+			}
+		}
+		
+		AFG_reorganization_of_the_Ministry_of_War_idea_1 = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = { 
+				naval_doctrine_cost_factor = -0.2
+				land_doctrine_cost_factor = -0.2
+				air_doctrine_cost_factor = -0.2
+				experience_gain_army_factor = 0.15
+				experience_loss_factor = -0.05
+				training_time_army_factor = -0.05
+			}
+		}
+		
+		AFG_reorganization_of_the_Ministry_of_War_idea_2 = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = { 
+				naval_doctrine_cost_factor = -0.2
+				land_doctrine_cost_factor = -0.2
+				air_doctrine_cost_factor = -0.2
+				experience_gain_army_factor = 0.15
+				experience_loss_factor = -0.05
+				training_time_army_factor = -0.05
+				army_org_factor = 0.05
+			}
+		}
+		
+		AFG_logistics_group_of_central_subordination_idea = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = { 
+				out_of_supply_factor = -0.1
+				recon_factor_while_entrenched = 0.08
+			}
+		}
+		
+		AFG_mountain_logistics_idea = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = { 
+				out_of_supply_factor = -0.1
+				recon_factor_while_entrenched = 0.08
+				org_loss_when_moving = -0.1
+				terrain_penalty_reduction = 0.3
+				river_crossing_factor = -0.2
+			}
+		}
+		
+		AFG_Turkish_instructors_idea = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			available = { country_exists = TUR }
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = { 
+				experience_gain_army_unit_factor = 0.1
+				max_dig_in_factor = -0.15
+			}
+		}
+		
+		AFG_loan_for_the_purchase_of_weapons_from_Germany_idea = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			available = { country_exists = GER }
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = { 
+				custom_modifier_tooltip = AFG_loan_for_the_purchase_of_weapons_from_Germany_idea_tt
+			}
+			on_add = {
+				if = { 
+					limit = { has_game_rule = { rule = trade_weapons option = DEFAULT } } 
+					if = {
+						limit = { has_completed_focus = AFG_support_for_the_arms_trade }
+						set_variable = { weapons_buy_discount = 3.33 }
+					}
+					else = {
+						set_variable = { weapons_buy_discount = 1.25 }
+					}
+				}
+			}
+			on_remove = {
+				if = {
+					limit = { has_game_rule = { rule = trade_weapons option = DEFAULT } }
+					if = {
+						limit = { has_completed_focus = AFG_support_for_the_arms_trade }
+						set_variable = { weapons_buy_discount = 2 }
+					}
+					else = {
+						set_variable = { weapons_buy_discount = 1 }
+					}
+				}
+			}
+		}
+		
+		AFG_maintaining_Pashtun_supremacy_in_the_army_idea = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = { 
+				army_core_attack_factor = 0.1
+				war_support_factor = 0.1
+			}
+		}
+		
+		AFG_expansion_of_the_regular_army_idea = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = { 
+				mobilization_speed = 0.15
+				training_time_army_factor = -0.2
+			}
+		}
+		
+		AFG_tax_on_the_needs_of_the_army_idea = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = { 
+				political_power_cost = -0.05
+				stability_factor = -0.03
+				out_of_supply_factor = -0.02
+			}
+		}
+		
+		AFG_conscription_of_mullahs_into_the_army_idea = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = { 
+				conscription_factor = 0.03
+				army_org_regain = 0.05
+			}
+		}
+		
+		AFG_preservation_of_voluntary_service_idea = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = { 
+				conscription = -0.02
+				army_core_defence_factor = 0.1
+				training_time_army_factor = -0.1
+				experience_gain_army_factor = 0.12
+			}
+		}
+		
+		AFG_decentralized_command_idea = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = { 
+				initiative_factor = 0.05
+				pocket_penalty = -0.2
+				planning_speed = 2
+				max_planning = -0.5
+				land_night_attack = -0.5
+				fortification_damage -0.5
+			}
+		}
+		
+		AFG_centralized_command_idea = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = { 
+				recon_factor = 0.1
+				org_loss_when_moving = -0.15
+			}
+		}
+		
+		AFG_special_forces_idea = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = { 
+				special_forces_cap = 0.15
+				special_forces_training_time_factor = -0.2
+			}
+		}
+		
+		AFG_exercises_in_British_India_idea = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			available = {
+				RAJ = {
+					exists = yes
+					is_subject_of = ENG
+					NOT = { has_war_with = ROOT }
+				}
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = { 
+				experience_gain_air_factor = 0.2
+				medium_plane_airframe_design_cost_factor = -0.05
+			}
+		}
+		
+		AFG_licensed_production_idea = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = { 
+				license_air_purchase_cost = -0.5
+			}
+		}
+		
+		AFG_doodle_economy_idea = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = { 
+				political_power_cost = -0.2
+				production_speed_buildings_factor = -0.05
+				production_factory_max_efficiency_factor = -0.05
+			}
+		}
+		
+		AFG_practical_farming_classes_in_Kabul_idea = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = { 
+				production_factory_efficiency_gain_factor = 0.4
+				monthly_population = 0.25
+				research_speed_factor = 0.03
+			}
+		}
+		
+		AFG_attracting_foreign_capital_idea = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			targeted_modifier = {
+				tag = SOV
+				cic_to_target_factor = 0.1
+			}
+			targeted_modifier = {
+				tag = ENG
+				cic_to_target_factor = 0.1
+			}
+			targeted_modifier = {
+				tag = GER
+				cic_to_target_factor = 0.1
+			}
+		}
+		
+		AFG_attracting_German_designers_idea = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			cancel = {
+				check_variable = { AFG_fashist_influence < 40 } 
+			}
+			modifier = {
+				production_speed_arms_factory_factor = 0.25
+				production_lack_of_resource_penalty_factor = 0.12
+				resistance_damage_to_garrison = -0.15
+			}
+		}
+		
+		AFG_attracting_German_designers_2_idea = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			cancel = {
+				check_variable = { AFG_fashist_influence < 40 } 
+			}
+			modifier = {
+				production_speed_arms_factory_factor = 0.25
+				production_lack_of_resource_penalty_factor = 0.12
+				resistance_damage_to_garrison = -0.15
+				resistance_activity = -0.3
+				resistance_growth = -0.15
+				resistance_garrison_penetration_chance = -0.4
+				conscription_factor = 0.01
+			}
+		}
+		
+		AFG_attracting_German_designers_3_idea = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			cancel = {
+				check_variable = { AFG_fashist_influence < 40 } 
+			}
+			modifier = {
+				production_speed_arms_factory_factor = 0.25
+				production_lack_of_resource_penalty_factor = 0.12
+				resistance_damage_to_garrison = -0.15
+				resistance_activity = -0.3
+				resistance_growth = -0.15
+				resistance_garrison_penetration_chance = -0.4
+				conscription_factor = 0.01
+				root_out_resistance_effectiveness_factor = 0.5
+			}
+		}
+		
+		AFG_seven_year_economic_development_plan_idea = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = {
+				political_power_factor = -0.05
+				production_speed_buildings_factor = 0.05
+				global_building_slots_factor = 0.1
+				local_resources_factor = 0.15
+				production_lack_of_resource_penalty_factor = -0.1
+			}
+		}
+		
+		AFG_seven_year_economic_development_plan_1_idea = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = {
+				political_power_factor = -0.05
+				production_speed_buildings_factor = 0.05
+				global_building_slots_factor = 0.1
+				local_resources_factor = 0.15
+				production_lack_of_resource_penalty_factor = -0.1
+				production_speed_hospital_factor = 0.25
+				industry_free_repair_factor = 0.14
+			}
+		}
+		
+		AFG_expansion_of_the_HPP_in_Jabal_Us_siraj_idea = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = {
+				production_speed_buildings_factor = 0.15	
+			}
+		}
+		
+		AFG_reorganization_of_the_Mines_Department_idea = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = {
+				country_resource_oil = 4
+				consumer_goods_factor = -0.03
+			}
+		}
+		
+		AFG_reorganization_of_the_Mines_Department_1_idea = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = {
+				country_resource_oil = 4
+				consumer_goods_factor = -0.08
+			}
+		}
+		
+		AFG_reorganization_of_the_Mines_Department_2_idea = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = {
+				country_resource_oil = 4
+				consumer_goods_factor = -0.03
+				fuel_gain = 50
+				political_power_factor = -0.05
+			}
+		}
+		
+		AFG_reorganization_of_the_Mines_Department_3_idea = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = {
+				country_resource_oil = 4
+				consumer_goods_factor = -0.08
+				fuel_gain = 50
+				political_power_factor = -0.05
+			}
+		}
+		
+		AFG_gold_mining_failure = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = {
+				consumer_goods_factor = 0.2
+			}
+		}
+		
+		AFG_religious_education = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = {
+				research_speed_factor = -0.02
+				army_org_regain = 0.07
+			}
+		}
+		
+		AFG_religious_education_1 = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = {
+				research_speed_factor = -0.07
+				army_org_regain = 0.1
+			}
+		}
+		
+		Inland_Exploration_Company_idea = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			modifier = {
+				production_speed_buildings_factor = 0.05
+			}
+		}
+	}
+		
+	materiel_manufacturer = {
+		designer = yes
+		AFG_kabul_arsenal = { 
+			picture = AFG_kabul_arsenal
+			allowed = {
+				original_tag = AFG
+			}
+			available = {
+				has_completed_focus = AFG_Mashin_han
+			}
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+			traits = { infantry_equipment_manufacturer }	
+		}
+	}
+}

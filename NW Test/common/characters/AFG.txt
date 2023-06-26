@@ -1,0 +1,991 @@
+characters = {
+
+	AFG_Mohammad_Hashim_han = {
+		name = AFG_Mohammad_Hashim_han
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/AFG/Portrait_Afghanistan_Mohammed_Zahir_Shah.dds"
+			}
+			army = {
+				large = "gfx/leaders/AFG/Portrait_army_Afghanistan_Mohammed_Zahir_Shah.dds"
+				small = "GFX_"
+			}
+		}
+		country_leader = {
+			ideology = absolute_monarchy
+			traits = { AFG_anglophile conservative_politician cruel }          #conservative_politician - copy from SAU#
+			expire = "1965.1.1.1"
+			id = -1
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = AFG_Mohammad_Hashim_han
+			allowed = {
+				original_tag = AFG	
+			}
+			available = {
+			}
+			traits = {
+				army_chief_drill_2
+			}
+		}
+		field_marshal = {
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	
+	AFG_Ismail_Barhi = {
+		name = AFG_Ismail_Barhi
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/AFG/Portrait_AFG_Ismail_Barhi.dds"
+			}
+		}
+	}
+	
+	AFG_Fazl_Omar_Modjaddidi = {
+		name = AFG_Fazl_Omar_Modjaddidi
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/AFG/Portrait_AFG_Fazl_Omar_Modjaddidi.dds"
+				small = "GFX_"
+			}
+		}
+		country_leader = {
+			ideology = clerical_autocracy
+			traits = { AFG_spiritual_leader_of_shinwari AFG_a_powerful_clan AFG_hazrat }          
+			expire = "1965.1.1.1"
+			id = -1
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = AFG_Fazl_Omar_Modjaddidi
+			allowed = {
+				original_tag = AFG	
+			}
+			available = {
+			}
+			traits = { AFG_spiritual_leader_of_shinwari }
+			on_add = {
+				owner = {
+					add_power_balance_value = {
+						id = AFG_power_balance
+						value = 0.05
+						tooltip_side = AFG_ulema_council
+					}
+				}
+			}
+			on_remove = {
+				owner = {
+					add_power_balance_value = {
+						id = AFG_power_balance
+						value = -0.05
+						tooltip_side = AFG_modernists
+					}
+				}
+			}
+		}
+	}
+	
+	AFG_Mohammad_Gul_han_Momand = {
+		name = AFG_Mohammad_Gul_han_Momand
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/AFG/Portrait_AFG_Mohammad_Gul_han_Momand.dds"
+				small = "GFX_"
+			}
+			army = {
+				large = "gfx/leaders/AFG/Portrait_army_AFG_Mohammad_Gul_han_Momand"
+				small = "GFX_"
+			}
+		}
+		country_leader = {
+			ideology = nationalism_ideology
+			traits = { AFG_the_personification_of_Pashtunwali }          
+			expire = "1965.1.1.1"
+			id = -1
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = AFG_Mohammad_Gul_han_Momand
+			allowed = {
+				original_tag = AFG	
+			}
+			available = {
+			}
+			visible = { NOT = { has_country_flag = AFG_Mohammad_Gul_han_Momand_on_mission_flag } }
+			traits = { king_of_poets dear_administrator }
+			on_add = {
+				custom_effect_tooltip = AFG_Mohammad_Gul_han_Momand_tt
+				owner = {
+					set_country_flag = AFG_Mohammad_Gul_han_Momand_flag
+					add_power_balance_value = {
+						id = AFG_power_balance
+						value = -0.05
+						tooltip_side = AFG_modernists
+					}
+				}
+			}
+			on_remove = {
+				custom_effect_tooltip = AFG_Mohammad_Gul_han_Momand_2_tt
+				owner = {
+					clr_country_flag = AFG_Mohammad_Gul_han_Momand_flag
+					add_power_balance_value = {
+						id = AFG_power_balance
+						value = 0.05
+						tooltip_side = AFG_ulema_council
+					}
+				}
+			}
+		}
+		corps_commander = {
+			visible = { NOT = { has_country_flag = AFG_Mohammad_Gul_han_Momand_on_mission_flag } }
+			traits = { inspirational_leader }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	
+	AFG_Abdur_Rahim_Khan = {
+		name = AFG_Abdur_Rahim_Khan
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/AFG/Portrait_AFG_Abdur_Rahim_Khan.dds"
+				small = "GFX_"
+			}
+			army = {
+				large = "gfx/leaders/AFG/Portrait_army_AFG_Abdur_Rahim_Khan"
+				small = "GFX_"
+			}
+		}
+		country_leader = {
+			ideology = national_liberalism
+			traits = { former_gendarme }          
+			expire = "1965.1.1.1"
+			id = -1
+		}
+		advisor = {
+			slot = high_command
+			idea_token = AFG_Abdur_Rahim_Khan
+			allowed = {
+				original_tag = AFG	
+			}
+			available = {
+			}
+			visible = { NOT = { has_country_flag = AFG_defeat_the_opposition_flag } }
+			traits = { army_logistics_2 }
+			on_add = {
+				owner = {
+					add_power_balance_value = {
+						id = AFG_power_balance
+						value = -0.05
+						tooltip_side = AFG_modernists
+					}
+				}
+			}
+			on_remove = {
+				owner = {
+					add_power_balance_value = {
+						id = AFG_power_balance
+						value = 0.05
+						tooltip_side = AFG_ulema_council
+					}
+				}
+			}
+		}
+		corps_commander = {
+			visible = { NOT = { has_country_flag = AFG_defeat_the_opposition_flag } }
+			traits = { old_guard cavalry_officer politically_connected }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}
+	
+	AFG_Mohammed_Zahir_Shah = {
+		name = AFG_Mohammed_Zahir_Shah
+		portraits = {
+			army = {
+				large = "gfx/leaders/AFG/Portrait_army_AFG_Mohammed_Zahir_Shah"
+				small = "GFX_"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = AFG_Mohammed_Zahir_Shah
+			allowed = {
+				original_tag = AFG	
+			}
+			available = {
+			}
+			traits = { army_infantry_1 }
+			on_add = {
+				owner = {
+					add_to_variable = {
+						var = AFG_fashist_influence
+						value = 10
+						tooltip = AFG_plus_to_fashist_influence_tt
+					}
+					AFG_fashist_influence_check_effect = yes
+				}
+			}
+			on_remove = {
+				owner = {
+					add_to_variable = {
+						var = AFG_fashist_influence
+						value = -10
+						tooltip = AFG_minus_to_fashist_influence_tt
+					}
+					AFG_fashist_influence_check_effect = yes
+				}
+			}
+		}
+		field_marshal = {
+			traits = { skilled_staffer }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+	
+	AFG_Shah_Mahmud_Khan = {
+		name = AFG_Shah_Mahmud_Khan
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/AFG/Portrait_AFG_Shah_Mahmud_Khan"
+				small = "GFX_"
+			}
+			army = {
+				large = "gfx/leaders/AFG/Portrait_army_AFG_Shah_Mahmud_Khan"
+				small = "GFX_"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = AFG_Shah_Mahmud_Khan
+			allowed = {
+				original_tag = AFG	
+			}
+			available = {
+			}
+			traits = { army_regrouping_2 }
+			on_add = {
+				owner = {
+					add_power_balance_value = {
+						id = AFG_power_balance
+						value = -0.05
+						tooltip_side = AFG_modernists
+					}
+				}
+			}
+			on_remove = {
+				owner = {
+					add_power_balance_value = {
+						id = AFG_power_balance
+						value = 0.05
+						tooltip_side = AFG_ulema_council
+					}
+				}
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = AFG_Shah_Mahmud_Khan
+			allowed = {
+				original_tag = AFG	
+			}
+			available = {
+			}
+			traits = { modernizer AFG_supporter_of_democratic_principles }
+			on_add = {
+				owner = {
+					add_power_balance_value = {
+						id = AFG_power_balance
+						value = -0.05
+						tooltip_side = AFG_modernists
+					}
+				}
+			}
+			on_remove = {
+				owner = {
+					add_power_balance_value = {
+						id = AFG_power_balance
+						value = 0.05
+						tooltip_side = AFG_ulema_council
+					}
+				}
+			}
+		}
+		corps_commander = {
+			traits = { trait_cautious infantry_officer politically_connected }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+	
+	AFG_Ali_Muhammed_Lamari = {
+		name = AFG_Ali_Muhammed_Lamari
+		portraits = {
+			civilian = {
+				large = gfx/leaders/AFG/Portrait_AFG_Ali_Muhammed_Lamari
+				small = "GFX_"
+			}
+			army = {
+				large = "gfx/leaders/AFG/Portrait_army_AFG_Ali_Muhammed_Lamari"
+				small = "GFX_"
+			}
+		}
+		advisor = {
+			slot = theorist
+			idea_token = AFG_Ali_Muhammed_Lamari
+			ledger = army
+			traits = { military_theorist }
+			on_add = {
+				owner = {
+					add_to_variable = {
+						var = AFG_fashist_influence
+						value = 10
+						tooltip = AFG_plus_to_fashist_influence_tt
+					}
+					AFG_fashist_influence_check_effect = yes
+					add_power_balance_value = {
+						id = AFG_power_balance
+						value = 0.05
+						tooltip_side = AFG_ulema_council
+					}
+				}
+			}
+			on_remove = {
+				owner = {
+					add_to_variable = {
+						var = AFG_fashist_influence
+						value = -10
+						tooltip = AFG_minus_to_fashist_influence_tt
+					}
+					AFG_fashist_influence_check_effect = yes
+					add_power_balance_value = {
+						id = AFG_power_balance
+						value = -0.05
+						tooltip_side = AFG_modernists 
+					}
+				}
+			}			
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = AFG_Ali_Muhammed_Lamari
+			allowed = {
+				original_tag = AFG	
+			}
+			available = {
+			}
+			traits = { prince_of_terror }
+			on_add = {
+				owner = {
+					add_power_balance_value = {
+						id = AFG_power_balance
+						value = 0.05
+						tooltip_side = AFG_ulema_council
+					}
+				}
+			}
+			on_remove = {
+				owner = {
+					add_power_balance_value = {
+						id = AFG_power_balance
+						value = -0.05
+						tooltip_side = AFG_modernists 
+					}
+				}
+			}
+		}
+		corps_commander = {
+			traits = { trait_mountaineer harsh_leader infantry_officer politically_connected  }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 3
+		}
+	}
+	
+	AFG_Shah_Wali_Khan = {
+		name = AFG_Shah_Wali_Khan
+		portraits = {
+			army = {
+				large = "gfx/leaders/AFG/Portrait_army_AFG_Shah_Wali_Khan"
+				small = "GFX_"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = AFG_Shah_Wali_Khan
+			allowed = {
+				original_tag = AFG	
+			}
+			available = {
+			}
+			traits = { army_cavalry_3 }
+			on_add = {
+				owner = {
+					add_power_balance_value = {
+						id = AFG_power_balance
+						value = 0.05
+						tooltip_side = AFG_ulema_council
+					}
+				}
+			}
+			on_remove = {
+				owner = {
+					add_power_balance_value = {
+						id = AFG_power_balance
+						value = -0.05
+						tooltip_side = AFG_modernists 
+					}
+				}
+			}
+		}
+		field_marshal = {
+			traits = { old_guard cavalry_officer inspirational_leader politically_connected }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 2
+			planning_skill = 5
+			logistics_skill = 3
+		}
+	}
+	
+	AFG_Ghulam_Haidar_Rasuli = {
+		name = AFG_Ghulam_Haidar_Rasuli
+		portraits = {
+			army = {
+				large = "gfx/leaders/AFG/Portrait_army_AFG_Ghulam_Haidar_Rasuli"
+				small = "GFX_"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = AFG_Ghulam_Haidar_Rasuli
+			allowed = {
+				original_tag = AFG	
+			}
+			available = {
+			}
+			traits = { army_concealment_1 }
+		}
+		corps_commander = {
+			traits = { career_officer trait_reckless }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	
+	AFG_Asadullah_Khan_Siraj = {
+		name = AFG_Asadullah_Khan_Siraj
+		portraits = {
+			army = {
+				large = "gfx/leaders/AFG/Portrait_army_AFG_Asadullah_Khan_Siraj"
+				small = "GFX_"
+			}
+		}
+		advisor = {
+			slot = air_chief
+			idea_token = AFG_Asadullah_Khan_Siraj
+			allowed = {
+				original_tag = AFG	
+			}
+			available = {
+			}
+			traits = { air_chief_reform_2 }
+		}
+		corps_commander = {
+			traits = { infantry_officer politically_connected }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 3
+		}
+	}
+	
+	AFG_Muhammad_Kabir_Khan = {
+		name = AFG_Muhammad_Kabir_Khan
+		portraits = {
+			civilian = {
+				small = "GFX_"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = AFG_Muhammad_Kabir_Khan
+			allowed = {
+				original_tag = AFG	
+			}
+			available = {
+			}
+			traits = { armaments_organizer }
+			on_add = {
+				owner = {
+					add_power_balance_value = {
+						id = AFG_power_balance
+						value = -0.05
+						tooltip_side = AFG_modernists
+					}
+				}
+			}
+			on_remove = {
+				owner = {
+					add_power_balance_value = {
+						id = AFG_power_balance
+						value = 0.05
+						tooltip_side = AFG_ulema_council
+					}
+				}
+			}
+		}
+	}
+	
+	AFG_Mohammed_Naim_Khan = {
+		name = AFG_Mohammed_Naim_Khan
+		portraits = {
+			civilian = {
+				small = "GFX_"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = AFG_Mohammed_Naim_Khan
+			allowed = {
+				original_tag = AFG	
+			}
+			available = {
+			}
+			traits = { education_minister }
+			on_add = {
+				owner = {
+					add_power_balance_value = {
+						id = AFG_power_balance
+						value = -0.05
+						tooltip_side = AFG_modernists
+					}
+					add_to_variable = {
+						var = AFG_fashist_influence
+						value = 10
+						tooltip = AFG_plus_to_fashist_influence_tt
+					}
+					AFG_fashist_influence_check_effect = yes
+				}
+			}
+			on_remove = {
+				owner = {
+					add_power_balance_value = {
+						id = AFG_power_balance
+						value = 0.05
+						tooltip_side = AFG_ulema_council
+					}
+					add_to_variable = {
+						var = AFG_fashist_influence
+						value = -10
+						tooltip = AFG_minus_to_fashist_influence_tt
+					}
+					AFG_fashist_influence_check_effect = yes
+				}
+			}
+		}
+	}
+	
+	AFG_Mir_Ali_Ahmad_Khojat = {
+		name = AFG_Mir_Ali_Ahmad_Khojat
+		portraits = {
+			civilian = {
+				small = "GFX_"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = AFG_Mir_Ali_Ahmad_Khojat
+			allowed = {
+				original_tag = AFG	
+			}
+			available = {
+			}
+			traits = { AFG_the_Shiite_cleric }
+			on_add = {
+				owner = {
+					add_power_balance_value = {
+						id = AFG_power_balance
+						value = 0.05
+						tooltip_side = AFG_ulema_council
+					}
+				}
+			}
+			on_remove = {
+				owner = {
+					add_power_balance_value = {
+						id = AFG_power_balance
+						value = -0.05
+						tooltip_side = AFG_modernists
+					}
+				}
+			}
+		}
+	}
+	
+	AFG_Abdul_Karim_Khan_Siraj = {
+		name = AFG_Abdul_Karim_Khan_Siraj
+		portraits = {
+			civilian = {
+				small = "GFX_"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = AFG_Abdul_Karim_Khan_Siraj
+			allowed = {
+				original_tag = AFG	
+			}
+			available = {
+			}
+			traits = { silent_workhorse }
+		}
+	}
+	
+	AFG_Humaira_Begum = {
+		name = AFG_Humaira_Begum
+		portraits = {
+			civilian = {
+				small = "GFX_"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = AFG_Humaira_Begum
+			allowed = {
+				original_tag = AFG	
+			}
+			available = {
+			}
+			traits = { womens_rights_activist AFG_kings_wife }
+			on_add = {
+				owner = {
+					add_power_balance_value = {
+						id = AFG_power_balance
+						value = -0.05
+						tooltip_side = AFG_modernists
+					}
+				}
+			}
+			on_remove = {
+				owner = {
+					add_power_balance_value = {
+						id = AFG_power_balance
+						value = 0.05
+						tooltip_side = AFG_ulema_council 
+					}
+				}
+			}
+		}
+	}
+	
+	AFG_Ghulam_Mohammad_Farhad = {
+		name = AFG_Ghulam_Mohammad_Farhad
+		portraits = {
+			civilian = {
+				small = "GFX_"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = AFG_Ghulam_Mohammad_Farhad
+			allowed = {
+				original_tag = AFG	
+			}
+			available = {
+			}
+			traits = { AFG_progerman_engineer }
+			on_add = {
+				owner = {
+					add_to_variable = {
+						var = AFG_fashist_influence
+						value = 10
+						tooltip = AFG_plus_to_fashist_influence_tt
+					}
+					AFG_fashist_influence_check_effect = yes
+				}
+			}
+			on_remove = {
+				owner = {
+					add_to_variable = {
+						var = AFG_fashist_influence
+						value = -10
+						tooltip = AFG_minus_to_fashist_influence_tt
+					}
+					AFG_fashist_influence_check_effect = yes
+				}
+			}
+		}
+	}
+	
+	AFG_Abdul_Majid_Zabuli = {
+		name = AFG_Abdul_Majid_Zabuli
+		portraits = {
+			civilian = {
+				small = "GFX_"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = AFG_Abdul_Majid_Zabuli
+			allowed = {
+				original_tag = AFG	
+			}
+			available = {
+			}
+			cost = 180
+			traits = { finance_minister captain_of_industry nazi_sympathizer }
+			on_add = {
+				owner = {
+					add_power_balance_value = {
+						id = AFG_power_balance
+						value = -0.05
+						tooltip_side = AFG_modernists
+					}
+					add_to_variable = {
+						var = AFG_fashist_influence
+						value = 10
+						tooltip = AFG_plus_to_fashist_influence_tt
+					}
+					AFG_fashist_influence_check_effect = yes
+				}
+			}
+			on_remove = {
+				owner = {
+					add_power_balance_value = {
+						id = AFG_power_balance
+						value = 0.05
+						tooltip_side = AFG_ulema_council
+					}
+					add_to_variable = {
+						var = AFG_fashist_influence
+						value = -10
+						tooltip = AFG_minus_to_fashist_influence_tt
+					}
+					AFG_fashist_influence_check_effect = yes
+				}
+			}
+		}
+	}
+	
+	AFG_Junaid_Khan = {
+		name = AFG_Junaid_Khan
+		portraits = {
+			civilian = {
+				small = "GFX_"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = AFG_Junaid_Khan
+			allowed = {
+				original_tag = AFG	
+			}
+			available = {
+				has_completed_focus = AFG_support_Basmach_organizations
+			}
+			visible = { has_country_flag = AFG_Junaid_Khan }
+			traits = { AFG_leader_of_the_Turkestan_Mujahideen }
+		}
+	}
+	
+	AFG_Sadi_Ogri = {
+		name = AFG_Sadi_Ogri
+		portraits = {
+			army = {
+				large = "gfx/leaders/AFG/Portrait_army_AFG_Ghulam_Haidar_Rasuli"
+				small = "GFX_"
+			}
+		}
+		advisor = {
+			slot = high_command
+			idea_token = AFG_Sadi_Ogri
+			allowed = {
+				original_tag = AFG	
+			}
+			available = {
+				has_completed_focus = AFG_support_Basmach_organizations
+			}
+			traits = { AFG_Central_Asia_explorer }
+		}
+		corps_commander = {
+			traits = { career_officer trait_reckless }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	
+	AFG_Kamchi_bek = {
+		name = AFG_Kamchi_bek
+		portraits = {
+			civilian = {
+				small = "GFX_"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = AFG_Kamchi_bek
+			allowed = {
+				original_tag = AFG	
+			}
+			available = {
+				has_completed_focus = AFG_support_Basmach_organizations
+			}
+			cost = 180
+			targeted_modifier = {
+				tag = SOV
+				attack_bonus_against = 0.05
+			}
+			traits = { AFG_a_hater_of_Soviet_power AFG_cooperates_with_the_Abwehr }
+			on_add = {
+				owner = {
+					add_to_variable = {
+						var = AFG_fashist_influence
+						value = 10
+						tooltip = AFG_plus_to_fashist_influence_tt
+					}
+					AFG_fashist_influence_check_effect = yes
+				}
+			}
+			on_remove = {
+				owner = {
+					add_to_variable = {
+						var = AFG_fashist_influence
+						value = -10
+						tooltip = AFG_minus_to_fashist_influence_tt
+					}
+					AFG_fashist_influence_check_effect = yes
+				}
+			}
+		}
+	}
+	
+	AFG_Mirsa_Ali_Muhammad = {
+		name = AFG_Mirsa_Ali_Muhammad
+		portraits = {
+			civilian = {
+				small = "GFX_"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = AFG_Mirsa_Ali_Muhammad
+			allowed = {
+				original_tag = AFG	
+			}
+			available = {
+			}
+			visible = { NOT = { has_country_flag = AFG_defeat_the_opposition_flag } }
+			traits = { foreign_secretary }
+			on_add = {
+				owner = {
+					add_power_balance_value = {
+						id = AFG_power_balance
+						value = -0.05
+						tooltip_side = AFG_modernists
+					}
+				}
+			}
+			on_remove = {
+				owner = {
+					add_power_balance_value = {
+						id = AFG_power_balance
+						value = 0.05
+						tooltip_side = AFG_ulema_council
+					}
+				}
+			}
+		}
+	}
+	
+	AFG_Shen_Han_Nashir = {
+		name = AFG_Shen_Han_Nashir
+		portraits = {
+			civilian = {
+				small = "GFX_"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = AFG_Shen_Han_Nashir
+			allowed = {
+				original_tag = AFG	
+			}
+			available = {
+				has_completed_focus = AFG_spinzar
+			}
+			on_add = {
+				owner = {
+					add_to_variable = {
+						var = AFG_Tajiks_tension
+						value = 5
+						tooltip = AFG_plus_to_Tajiks_tension_tt
+					}
+					AFG_Tajiks_tension_check_effect = yes
+				}
+			}
+			on_remove = {
+				owner = {
+					add_to_variable = {
+						var = AFG_Tajiks_tension
+						value = -5
+						tooltip = AFG_minus_to_Tajiks_tension_tt
+					}
+					AFG_Tajiks_tension_check_effect = yes
+				}
+			}
+			cost = 25
+			traits = { ICE_cotton_magnate }
+		}
+	}
+	
+	AFG_Mirza_Ali_Han = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/AFG/Portrait_AFG_Mirza_Ali_Han"
+			}
+			army = {
+				large = "gfx/leaders/AFG/Portrait_AFG_army_Mirza_Ali_Han"
+				small = "GFX_"
+			}
+		}
+	}	
+
+	AFG_Ibragim_Gausavar = {
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/AFG/Portrait_AFG_Ibragim_Gausavar"
+			}
+		}
+	}
+}
+	

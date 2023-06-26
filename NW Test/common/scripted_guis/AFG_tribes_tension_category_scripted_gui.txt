@@ -1,0 +1,10 @@
+scripted_gui = {
+
+	AFG_tribes_tension_category_ui = {
+		context_type = decision_category
+		window_name = "AFG_tribes_tension_category_ui_window"
+
+		properties = {
+		}
+	}
+}

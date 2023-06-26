@@ -1,0 +1,201 @@
+# Extra modifiers can be defined here. Although the game itself won't use those, 
+# you can access those modifiers using modifier@modifier_token in state & country scope 
+# or leader_modifier@modifier_token/unit_modifier@modifier_token in unit leader scope
+# modifier_token will be used for tooltip localization
+
+#modifier_token = {
+#
+#	# the tooltips will be colored accordingly depending if value is positive or not
+#	# one of "good neutral bad". default is bad
+#	color_type = bad 
+#	
+#	# type of values in tooltip. 
+#	# one of "number percentage percentage_in_hundred yes_no". default is number.
+#	value_type = number
+#	
+#	# number of precision for tooltips
+#	precision = 2
+#	
+#	# post fix for values in tooltip
+#	# one of "none days hours daily". default is none
+#	postfix = none
+#	
+#	# cateogies can be defined if wanted. some tooltips only display certain categories
+#	# multiple cateogies can be defined for a single modifier@modifier_token
+#	# categories:
+#	# none all naval air unit_leader country state army peace politics ai defensive aggressive 
+#	# war_production military_advancements military_equipment autonomy government_in_exile intelligence_agency
+#	# default is all, which includes every category
+#	category = army
+#	category = air
+#	category = country
+#}
+
+
+anarchism_tendency_sense_of_danger_modifier = {
+	color_type = good
+	value_type = percentage
+	precision = 1
+}
+
+anarchism_tendency_interest_industry_modifier = {
+	color_type = good
+	value_type = percentage
+	precision = 1
+}
+
+anarchism_tendency_need_trade_modifier = {
+	color_type = good
+	value_type = percentage
+	precision = 1
+}
+
+
+universal_factory_modifier = {
+	color_type = neutral
+	value_type = number
+	precision = 1
+}
+
+num_irregular_division_of_jihad = {
+	color_type = good
+	value_type = number
+	precision = 0
+}
+
+num_controlled_states_info = {
+	color_type = neutral
+	value_type = number
+	precision = 0
+}
+
+gekokujo_info = {
+	color_type = bad
+	value_type = number
+	precision = 0
+}
+
+aggressiveness_of_strasserism_info = {
+	color_type = neutral
+	value_type = number
+	precision = 0
+}
+
+anarchist_unity_bonus = {
+	color_type = good
+	value_type = number
+	precision = 2
+}
+
+jews_tensions_bonus = {
+	color_type = bad
+	value_type = number
+	precision = 2
+}
+
+arab_tensions_bonus = {
+	color_type = bad
+	value_type = number
+	precision = 2
+}
+
+all_chinese_cliques_fake_text = {
+	color_type = neutral
+	value_type = yes_no
+	precision = 0
+}
+
+attack_bonus_against_fake_text = {
+	color_type = good
+	value_type = percentage
+	precision = 1
+}
+
+defense_bonus_against_fake_text = {
+	color_type = good
+	value_type = percentage
+	precision = 1
+}
+
+generate_wargoal_tension_against_fake_text = {
+	color_type = neutral
+	value_type = percentage
+	precision = 1
+}
+
+weekly_greek_support = {
+	color_type = good
+	value_type = number
+	precision = 2
+}
+
+weekly_turkish_support = {
+	color_type = good
+	value_type = number
+	precision = 2
+}
+loyalty_of_tribes_jihad_divisions = {
+	color_type = neutral
+	value_type = number
+	precision = 0
+	postfix = none
+}
+
+europe_state_modifiers = {
+	color_type = neutral
+	value_type = number
+	precision = 0
+}
+arabia_cores_modifiers = {
+	color_type = neutral
+	value_type = number
+	precision = 0
+}
+chinese_state_modifiers = {
+	color_type = neutral
+	value_type = number
+	precision = 0
+}
+drill_bit_modifiers = {
+	color_type = good
+	value_type = number
+	precision = 0
+}
+ANG_colony_stability_modifier = {
+	color_type = good
+	value_type = percentage_in_hundred
+	precision = 2
+}
+MZB_colony_stability_modifier = {
+	color_type = good
+	value_type = percentage_in_hundred
+	precision = 2
+}
+TIM_colony_stability_modifier = {
+	color_type = good
+	value_type = percentage_in_hundred
+	precision = 2
+}
+MKO_colony_stability_modifier = {
+	color_type = good
+	value_type = percentage_in_hundred
+	precision = 2
+}
+republican_trait_modifier = {
+	color_type = neutral
+	value_type = yes_no
+	precision = 0
+}
+
+# China
+
+china_integration_of_province_time_modifier = {
+	color_type = bad
+	value_type = percentage
+	precision = 2
+}
+china_integration_of_province_cost_modifier = {
+	color_type = bad
+	value_type = percentage
+	precision = 2
+}

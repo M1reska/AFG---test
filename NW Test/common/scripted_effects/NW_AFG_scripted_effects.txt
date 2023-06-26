@@ -1,0 +1,68 @@
+AFG_Pashtun_tension_check_effect = {
+	hidden_effect = {
+		clamp_variable = {
+			var = AFG_Pashtun_tension
+			min = 0
+			max = 100
+		}
+		if = {
+			limit = { 
+				check_variable = { AFG_Pashtun_tension > 40 } 
+				NOT = { has_completed_focus = AFG_the_final_demilitarization_of_the_tribes }
+			}
+			country_event = { id = NW_AFG.14 } 
+		}
+		if = { 
+			limit = { 
+				check_variable = { AFG_Pashtun_tension > 99 } 
+				NOT = { has_completed_focus = AFG_the_final_demilitarization_of_the_tribes }
+			}
+			country_event = { id = NW_AFG.15 }
+		}
+	}
+}
+
+AFG_Tajiks_tension_check_effect = {
+	hidden_effect = {
+		clamp_variable = {
+			var = AFG_Tajiks_tension
+			min = 0
+			max = 100
+		}
+		if = { 
+			limit = { 
+				check_variable = { AFG_Tajiks_tension > 99 } 
+				NOT = { has_completed_focus = AFG_the_final_demilitarization_of_the_tribes }
+			}
+			country_event = { id = NW_AFG.18 }
+		}
+	}
+}
+
+AFG_Hoz_tension_check_effect = {
+	hidden_effect = {
+		clamp_variable = {
+			var = AFG_Hoz_tension
+			min = 0
+			max = 100
+		}
+		if = { 
+			limit = { 
+				check_variable = { AFG_Hoz_tension > 99 } 
+				NOT = { has_completed_focus = AFG_the_final_demilitarization_of_the_tribes }
+				controls_state = 949
+			}
+			country_event = { id = NW_AFG.22 }
+		}
+	}
+}
+
+AFG_fashist_influence_check_effect = {
+	hidden_effect = {
+		clamp_variable = {
+			var = AFG_fashist_influence
+			min = 0
+			max = 100
+		}
+	}
+}

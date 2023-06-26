@@ -1,0 +1,82 @@
+AFG_an_underdeveloped_feudal_tribal_state = {
+	icon = GFX_Landcruiser.gfx
+	enable = { always = yes }
+	remove_trigger = {
+		check_variable = { a = 0 }
+		check_variable = { b = 0 }
+		check_variable = { c = 0 }
+		check_variable = { d = 0 }
+	}
+	production_speed_buildings_factor = a
+	production_factory_max_efficiency_factor = b
+	research_speed_factor = c
+	global_building_slots_factor = d
+}
+
+AFG_the_Uprising_of_the_Daryl_speaking_peoples = {
+	icon = GFX_Landcruiser.gfx
+	enable = { always = yes }
+	remove_trigger = {
+	}
+	local_manpower = -0.8
+	local_factories = -1
+	local_supplies = -2
+	disable_strategic_redeployment_for_controller = 1
+}
+
+AFG_Pashtun_pastoralists = {
+	icon = GFX_Landcruiser.gfx
+	enable = { always = yes }
+	remove_trigger = {
+	}
+	monthly_population = 0.3
+	local_supplies_for_controller = 0.2
+}
+
+AFG_development_of_new_lands_modifier = {
+	icon = GFX_Landcruiser.gfx
+	enable = { always = yes }
+	remove_trigger = {
+	}
+	state_production_speed_buildings_factor = 0.07
+	local_supplies = 0.25
+	army_speed_factor_for_controller = 0.12
+}
+
+AFG_expansion_of_the_irrigation_system_modifier = {
+	icon = GFX_Landcruiser.gfx
+	enable = { always = yes }
+	remove_trigger = {
+	}
+	local_building_slots_factor = 0.2
+	local_resources = 0.25
+	local_supplies = 0.1
+}
+
+AFG_to_establish_a_hydroelectric_power_station_system_modifier = {                              
+	icon = GFX_Landcruiser.gfx
+	enable = { always = yes }
+	remove_trigger = {
+	}
+	state_production_speed_buildings_factor  = 0.3
+	mobilization_speed = 1
+	local_manpower = 0.02
+	custom_modifier_tooltip = AFG_plus_to_Tajiks_tension_weekly_factor_tt
+	custom_modifier_tooltip = AFG_plus_to_Hoz_tension_weekly_factor_tt
+}
+
+AFG_to_expand_tribal_conscription_modifier = {                              
+	icon = GFX_Landcruiser.gfx
+	enable = { always = yes }
+	remove_trigger = {
+	}
+	local_manpower = 0.07	
+}
+
+AFG_forced_conscription_of_Khan_sons_modifier = {                              
+	icon = GFX_Landcruiser.gfx
+	enable = { always = yes }
+	remove_trigger = {
+	}
+	local_manpower = 0.12
+}
