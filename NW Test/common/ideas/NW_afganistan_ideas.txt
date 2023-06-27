@@ -712,6 +712,26 @@ ideas = {
 				production_speed_arms_factory_factor = 0.25
 				production_lack_of_resource_penalty_factor = 0.12
 				resistance_damage_to_garrison = -0.15
+				root_out_resistance_effectiveness_factor = 0.5
+			}
+		}
+		
+		AFG_attracting_German_designers_4_idea = {                              
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			picture = usa_great_depression_3
+			cancel = {
+				check_variable = { AFG_fashist_influence < 40 } 
+			}
+			modifier = {
+				production_speed_arms_factory_factor = 0.25
+				production_lack_of_resource_penalty_factor = 0.12
+				resistance_damage_to_garrison = -0.15
 				resistance_activity = -0.3
 				resistance_growth = -0.15
 				resistance_garrison_penetration_chance = -0.4

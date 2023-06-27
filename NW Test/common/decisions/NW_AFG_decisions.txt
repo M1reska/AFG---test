@@ -261,6 +261,76 @@ AFG_balance_of_power_category = {
 			}
 		}
 	}
+	
+	AFG_expand_the_powers_of_Sharia_patrols = {
+		priority = 70
+		icon = GFX_decision_generic_political_discourse
+
+		allowed = {
+			original_tag = AFG
+		}
+		available = {
+			NOT = { has_country_flag = AFG_curtail_the_powers_of_Sharia_patrols_flag }
+		}
+		visible = {
+		}
+		fire_only_once = no
+		cost = 40
+		days_remove = 70
+		days_re_enable = 120
+		modifier = {
+			stability_factor = -0.05
+			political_power_cost = 0.3
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision AFG_expand_the_powers_of_Sharia_patrols"
+			set_country_flag = AFG_expand_the_powers_of_Sharia_patrols_flag
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): remove decision AFG_expand_the_powers_of_Sharia_patrols"
+			clr_country_flag = AFG_expand_the_powers_of_Sharia_patrols_flag
+			add_power_balance_value = {
+				id = AFG_power_balance
+				value = 0.1
+				tooltip_side = AFG_ulema_council
+			}
+		}
+	}
+	
+	AFG_curtail_the_powers_of_Sharia_patrols = {
+		priority = 50
+		icon = GFX_decision_generic_political_discourse
+
+		allowed = {
+			original_tag = AFG
+		}
+		available = {
+			NOT = { has_country_flag = AFG_expand_the_powers_of_Sharia_patrols_flag }
+		}
+		visible = {
+		}
+		fire_only_once = no
+		cost = 50
+		days_remove = 70
+		days_re_enable = 120
+		modifier = {
+			war_support_factor = 0.05
+			political_power_cost = 0.1
+		}
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision AFG_curtail_the_powers_of_Sharia_patrols"
+			set_country_flag = AFG_curtail_the_powers_of_Sharia_patrols_flag
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): remove decision AFG_curtail_the_powers_of_Sharia_patrols"
+			clr_country_flag = AFG_curtail_the_powers_of_Sharia_patrols_flag
+			add_power_balance_value = {
+				id = AFG_power_balance
+				value = -0.1
+				tooltip_side = AFG_modernists
+			}
+		}
+	}
 }
 
 AFG_the_pro_fascist_intelligentsia = {
@@ -1197,6 +1267,7 @@ AFG_shirketization_category = {
 		available = {
 		}
 		cost = 40
+		fire_only_once = yes
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision AFG_create_sugar_company"
 			set_country_flag = AFG_create_sugar_company_flag

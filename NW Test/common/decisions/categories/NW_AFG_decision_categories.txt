@@ -3,8 +3,10 @@ AFG_tribal_militia_category = {
 		original_tag = AFG
 	}
 	available = {
+		NOT = { has_completed_focus = AFG_creation_of_the_regular_army }
 	}
 	visible = {
+		NOT = { has_completed_focus = AFG_creation_of_the_regular_army }
 	}
 	icon = generic_trozkism
 	picture = GFX_decision_cat_arabia_tribal_militia

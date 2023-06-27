@@ -8,7 +8,7 @@ focus_tree = {
 		}
 	}
 	default = no
-	continuous_focus_position = { x = 3000 y = 1500 }
+	continuous_focus_position = { x = 3000 y = 2500 }
 	
 	focus = {
 		id = AFG_disarming_the_tribes
@@ -3013,6 +3013,7 @@ focus_tree = {
 				remove_idea = partial_regular_army 
 				add_idea = extensive_conscription 
 			}
+			custom_effect_tooltip = AFG_preservation_of_voluntary_service_tt
 		}		
 	}
 	
@@ -4218,13 +4219,25 @@ focus_tree = {
 				exists = yes 
 				NOT = { has_war_with = ROOT } 
 			}
-			has_idea = AFG_attracting_German_designers_idea
+			OR = {
+				has_idea = AFG_attracting_German_designers_idea
+				has_idea = AFG_attracting_German_designers_3_idea
+			}
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus AFG_police_reorganization"
-			swap_ideas = {
-				remove_idea = AFG_attracting_German_designers_idea
-				add_idea = AFG_attracting_German_designers_2_idea
+			if = {
+				limit = { has_idea = AFG_attracting_German_designers_idea }
+				swap_ideas = {
+					remove_idea = AFG_attracting_German_designers_idea
+					add_idea = AFG_attracting_German_designers_2_idea
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = AFG_attracting_German_designers_3_idea
+					add_idea = AFG_attracting_German_designers_4_idea
+				}
 			}
 			custom_effect_tooltip = AFG_attracting_German_designers_tt
 		}
@@ -4248,8 +4261,10 @@ focus_tree = {
 				exists = yes 
 				NOT = { has_war_with = ROOT } 
 			}
-			has_idea = AFG_attracting_German_designers_idea
-			has_completed_focus = AFG_police_reorganization
+			OR = {
+				has_idea = AFG_attracting_German_designers_idea
+				has_idea = AFG_attracting_German_designers_2_idea
+			}
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus AFG_reorganization_of_the_intelligence_network"
@@ -4263,9 +4278,18 @@ focus_tree = {
 					}
 				}
 			}
-			swap_ideas = {
-				remove_idea = AFG_attracting_German_designers_2_idea
-				add_idea = AFG_attracting_German_designers_3_idea
+			if = {
+				limit = { has_idea = AFG_attracting_German_designers_idea }
+				swap_ideas = {
+					remove_idea = AFG_attracting_German_designers_idea
+					add_idea = AFG_attracting_German_designers_3_idea
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = AFG_attracting_German_designers_2_idea
+					add_idea = AFG_attracting_German_designers_4_idea
+				}
 			}
 			custom_effect_tooltip = AFG_attracting_German_designers_tt
 		}
@@ -4823,6 +4847,653 @@ focus_tree = {
 				remove_idea = AFG_religious_education
 				add_idea = AFG_religious_education_1
 			}
+		}
+	}
+	
+	focus = {																																					
+		id = AFG_return_of_Amanulla
+		icon = GFX_z_goal_islamic_schools
+		cost = 7.2
+		x = 7
+		y = -1
+		relative_position_id = AFG_recreating_the_Air_Force
+		search_filters = {  }
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			always = no
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus AFG_return_of_Amanulla"
+			custom_effect_tooltip = TUR_focus_autocomplete_tt
+		}
+	}
+	
+	focus = {																																					
+		id = AFG_return_to_Pan_Islamism
+		icon = GFX_z_goal_islamic_schools
+		cost = 7.2
+		x = -1
+		y = 1
+		prerequisite = { focus = AFG_return_of_Amanulla }
+		relative_position_id = AFG_return_of_Amanulla
+		mutually_exclusive = { focus = AFG_betting_on_Tribes }
+		search_filters = {  }
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus AFG_return_to_Pan_Islamism"
+		}
+	}
+	
+	focus = {																																					
+		id = AFG_central_Asian_Islamic_Federation
+		icon = GFX_z_goal_islamic_schools
+		cost = 7.2
+		x = -1
+		y = 1
+		prerequisite = { focus = AFG_return_to_Pan_Islamism }
+		relative_position_id = AFG_return_to_Pan_Islamism
+		search_filters = {  }
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus AFG_central_Asian_Islamic_Federation"
+		}
+	}
+	
+	focus = {																																					
+		id = AFG_support_the_Uighur_uprising
+		icon = GFX_z_goal_islamic_schools
+		cost = 7.2
+		x = -1
+		y = 1
+		prerequisite = { focus = AFG_central_Asian_Islamic_Federation }
+		relative_position_id = AFG_central_Asian_Islamic_Federation
+		search_filters = {  }
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus AFG_support_the_Uighur_uprising"
+		}
+	}
+	
+	focus = {																																					
+		id = AFG_intervention_in_Xinjiang
+		icon = GFX_z_goal_islamic_schools
+		cost = 7.2
+		x = -1
+		y = 1
+		prerequisite = { focus = AFG_support_the_Uighur_uprising }
+		relative_position_id = AFG_support_the_Uighur_uprising
+		mutually_exclusive = { focus = AFG_invitation_of_Uighurs_to_the_Federation }
+		search_filters = {  }
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus AFG_intervention_in_Xinjiang"
+		}
+	}
+	
+	focus = {																																					
+		id = AFG_invitation_of_Uighurs_to_the_Federation
+		icon = GFX_z_goal_islamic_schools
+		cost = 7.2
+		x = 1
+		y = 1
+		prerequisite = { focus = AFG_support_the_Uighur_uprising }
+		relative_position_id = AFG_support_the_Uighur_uprising
+		mutually_exclusive = { focus = AFG_intervention_in_Xinjiang }
+		search_filters = {  }
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus AFG_invitation_of_Uighurs_to_the_Federation"
+		}
+	}
+	
+	focus = {																																					
+		id = AFG_to_claim_Turkestan
+		icon = GFX_z_goal_islamic_schools
+		cost = 7.2
+		x = 1
+		y = 1
+		prerequisite = { focus = AFG_central_Asian_Islamic_Federation }
+		relative_position_id = AFG_central_Asian_Islamic_Federation
+		search_filters = {  }
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus AFG_to_claim_Turkestan"
+		}
+	}
+	
+	focus = {																																					
+		id = AFG_jihad_against_the_Soviets
+		icon = GFX_z_goal_islamic_schools
+		cost = 7.2
+		x = 0
+		y = 2
+		prerequisite = { focus = AFG_to_claim_Turkestan }
+		relative_position_id = AFG_to_claim_Turkestan
+		search_filters = {  }
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus AFG_jihad_against_the_Soviets"
+		}
+	}
+	
+	focus = {																																					
+		id = AFG_support_the_British_Crown
+		icon = GFX_z_goal_islamic_schools
+		cost = 7.2
+		x = 1
+		y = 1
+		prerequisite = { focus = AFG_jihad_against_the_Soviets }
+		relative_position_id = AFG_jihad_against_the_Soviets
+		mutually_exclusive = { focus = AFG_support_the_Axis }
+		mutually_exclusive = { focus = AFG_own_coalition }
+		search_filters = {  }
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus AFG_support_the_British_Crown"
+		}
+	}
+	
+	focus = {																																					
+		id = AFG_support_the_Axis
+		icon = GFX_z_goal_islamic_schools
+		cost = 7.2
+		x = 2
+		y = 0
+		prerequisite = { focus = AFG_jihad_against_the_Soviets }
+		relative_position_id = AFG_support_the_British_Crown
+		mutually_exclusive = { focus = AFG_support_the_British_Crown }
+		mutually_exclusive = { focus = AFG_own_coalition }
+		search_filters = {  }
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus AFG_support_the_Axis"
+		}
+	}
+	
+	focus = {																																					
+		id = AFG_own_coalition
+		icon = GFX_z_goal_islamic_schools
+		cost = 7.2
+		x = 2
+		y = 0
+		prerequisite = { focus = AFG_jihad_against_the_Soviets focus = AFG_end_British_rule_in_India focus = AFG_confederation_with_Pakistan }
+		relative_position_id = AFG_support_the_Axis
+		mutually_exclusive = { focus = AFG_support_the_British_Crown }
+		mutually_exclusive = { focus = AFG_support_the_Axis }
+		search_filters = {  }
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus AFG_own_coalition"
+		}
+	}
+	
+	focus = {																																					
+		id = AFG_return_lands_of_Pashtuns
+		icon = GFX_z_goal_islamic_schools
+		cost = 7.2
+		x = -2
+		y = 0
+		prerequisite = { focus = AFG_central_Asian_Islamic_Federation }
+		relative_position_id = AFG_support_the_Uighur_uprising
+		search_filters = {  }
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus AFG_return_lands_of_Pashtuns"
+		}
+	}
+	
+	focus = {																																					
+		id = AFG_force_Iran_to_join_the_Federation
+		icon = GFX_z_goal_islamic_schools
+		cost = 7.2
+		x = 0
+		y = 2
+		prerequisite = { focus = AFG_return_lands_of_Pashtuns }
+		relative_position_id = AFG_return_lands_of_Pashtuns
+		search_filters = {  }
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus AFG_force_Iran_to_join_the_Federation"
+		}
+	}
+	
+	focus = {																																					
+		id = AFG_celebration_of_the_Federation
+		icon = GFX_z_goal_islamic_schools
+		cost = 7.2
+		x = 2
+		y = 1
+		prerequisite = { focus = AFG_force_Iran_to_join_the_Federation }
+		prerequisite = { focus = AFG_support_the_Uighur_uprising }
+		prerequisite = { focus = AFG_jihad_against_the_Soviets }
+		relative_position_id = AFG_force_Iran_to_join_the_Federation
+		search_filters = {  }
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus AFG_celebration_of_the_Federation"
+		}
+	}
+	
+	focus = {																																					
+		id = AFG_increase_the_salary_of_mullahs
+		icon = GFX_z_goal_islamic_schools
+		cost = 7.2
+		x = 1
+		y = 1
+		prerequisite = { focus = AFG_return_to_Pan_Islamism }
+		relative_position_id = AFG_return_to_Pan_Islamism
+		search_filters = {  }
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus AFG_increase_the_salary_of_mullahs"
+		}
+	}
+	
+	focus = {																																					
+		id = AFG_remove_disloyal_mullahs
+		icon = GFX_z_goal_islamic_schools
+		cost = 7.2
+		x = 1
+		y = 1
+		prerequisite = { focus = AFG_increase_the_salary_of_mullahs }
+		relative_position_id = AFG_increase_the_salary_of_mullahs
+		search_filters = {  }
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus AFG_remove_disloyal_mullahs"
+		}
+	}
+	
+	focus = {																																					
+		id = AFG_support_for_pan_Islamist_sentiments
+		icon = GFX_z_goal_islamic_schools
+		cost = 7.2
+		x = -1
+		y = 1
+		prerequisite = { focus = AFG_remove_disloyal_mullahs }
+		relative_position_id = AFG_remove_disloyal_mullahs
+		search_filters = {  }
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus AFG_support_for_pan_Islamist_sentiments"
+		}
+	}
+	
+	focus = {																																					
+		id = AFG_enlist_the_support_of_basmachestvo
+		icon = GFX_z_goal_islamic_schools
+		cost = 7.2
+		x = 1
+		y = 1
+		prerequisite = { focus = AFG_support_for_pan_Islamist_sentiments }
+		relative_position_id = AFG_support_for_pan_Islamist_sentiments
+		mutually_exclusive = { focus = AFG_disarm_Habibullah_supporters }
+		search_filters = {  }
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus AFG_enlist_the_support_of_basmachestvo"
+		}
+	}
+	
+	focus = {																																					
+		id = AFG_to_raise_an_uprising_in_Turkestan
+		icon = GFX_z_goal_islamic_schools
+		cost = 7.2
+		x = 0
+		y = 2
+		prerequisite = { focus = AFG_enlist_the_support_of_basmachestvo }
+		relative_position_id = AFG_enlist_the_support_of_basmachestvo
+		search_filters = {  }
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus AFG_to_raise_an_uprising_in_Turkestan"
+		}
+	}
+	
+	focus = {																																					
+		id = AFG_betting_on_Tribes
+		icon = GFX_z_goal_islamic_schools
+		cost = 7.2
+		x = 1
+		y = 1
+		prerequisite = { focus = AFG_return_of_Amanulla }
+		relative_position_id = AFG_return_of_Amanulla
+		mutually_exclusive = { focus = AFG_return_to_Pan_Islamism }
+		search_filters = {  }
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus AFG_betting_on_Tribes"
+		}
+	}
+	
+	focus = {																																					
+		id = AFG_dissolve_the_Ulema_Council
+		icon = GFX_z_goal_islamic_schools
+		cost = 7.2
+		x = 1
+		y = 1
+		prerequisite = { focus = AFG_betting_on_Tribes }
+		relative_position_id = AFG_betting_on_Tribes
+		search_filters = {  }
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus AFG_dissolve_the_Ulema_Council"
+		}
+	}
+	
+	focus = {																																					
+		id = AFG_promotion_of_secularism
+		icon = GFX_z_goal_islamic_schools
+		cost = 7.2
+		x = 0
+		y = 2
+		prerequisite = { focus = AFG_dissolve_the_Ulema_Council }
+		relative_position_id = AFG_dissolve_the_Ulema_Council
+		search_filters = {  }
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus AFG_promotion_of_secularism"
+		}
+	}
+	
+	focus = {																																					
+		id = AFG_disarm_Habibullah_supporters
+		icon = GFX_z_goal_islamic_schools
+		cost = 7.2
+		x = 1
+		y = 1
+		prerequisite = { focus = AFG_promotion_of_secularism focus = AFG_support_for_pan_Islamist_sentiments }
+		relative_position_id = AFG_promotion_of_secularism
+		mutually_exclusive = { focus = AFG_enlist_the_support_of_basmachestvo }
+		search_filters = {  }
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus AFG_disarm_Habibullah_supporters"
+		}
+	}
+	
+	focus = {																																					
+		id = AFG_support_for_the_anti_colonial_struggle_in_Waziristan
+		icon = GFX_z_goal_islamic_schools
+		cost = 7.2
+		x = 2
+		y = 0
+		prerequisite = { focus = AFG_betting_on_Tribes }
+		relative_position_id = AFG_dissolve_the_Ulema_Council
+		mutually_exclusive = { focus = AFG_red_shirts }
+		search_filters = {  }
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus AFG_support_for_the_anti_colonial_struggle_in_Waziristan"
+		}
+	}
+	
+	focus = {																																					
+		id = AFG_end_British_rule_in_India
+		icon = GFX_z_goal_islamic_schools
+		cost = 7.2
+		x = -1
+		y = 1
+		prerequisite = { focus = AFG_support_for_the_anti_colonial_struggle_in_Waziristan }
+		relative_position_id = AFG_support_for_the_anti_colonial_struggle_in_Waziristan
+		mutually_exclusive = { focus = AFG_confederation_with_Pakistan }
+		search_filters = {  }
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus AFG_end_British_rule_in_India"
+		}
+	}
+	
+	focus = {																																					
+		id = AFG_confederation_with_Pakistan
+		icon = GFX_z_goal_islamic_schools
+		cost = 7.2
+		x = 2
+		y = 0
+		prerequisite = { focus = AFG_support_for_the_anti_colonial_struggle_in_Waziristan focus = AFG_red_shirts }
+		relative_position_id = AFG_end_British_rule_in_India
+		mutually_exclusive = { focus = AFG_end_British_rule_in_India }
+		search_filters = {  }
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus AFG_confederation_with_Pakistan"
+		}
+	}
+	
+	focus = {																																					
+		id = AFG_unified_system_of_training_of_the_Armed_forces
+		icon = GFX_z_goal_islamic_schools
+		cost = 7.2
+		x = 1
+		y = 1
+		prerequisite = { focus = AFG_confederation_with_Pakistan }
+		relative_position_id = AFG_confederation_with_Pakistan
+		search_filters = {  }
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus AFG_unified_system_of_training_of_the_Armed_forces"
+		}
+	}
+	
+	focus = {																																					
+		id = AFG_integration_of_Eastern_tribes
+		icon = GFX_z_goal_islamic_schools
+		cost = 7.2
+		x = -1
+		y = 1
+		prerequisite = { focus = AFG_confederation_with_Pakistan }
+		relative_position_id = AFG_unified_system_of_training_of_the_Armed_forces
+		search_filters = {  }
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus AFG_integration_of_Eastern_tribes"
+		}
+	}
+	
+	focus = {																																					
+		id = AFG_equalize_east_and_west
+		icon = GFX_z_goal_islamic_schools
+		cost = 7.2
+		x = 1
+		y = 1
+		prerequisite = { focus = AFG_integration_of_Eastern_tribes }
+		prerequisite = { focus = AFG_unified_system_of_training_of_the_Armed_forces }
+		relative_position_id = AFG_integration_of_Eastern_tribes
+		search_filters = {  }
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus AFG_equalize_east_and_west"
+		}
+	}
+	
+	focus = {																																					
+		id = AFG_develop_the_infrastructure_of_the_East
+		icon = GFX_z_goal_islamic_schools
+		cost = 7.2
+		x = -1
+		y = 1
+		prerequisite = { focus = AFG_equalize_east_and_west }
+		relative_position_id = AFG_equalize_east_and_west
+		search_filters = {  }
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus AFG_develop_the_infrastructure_of_the_East"
+		}
+	}
+	
+	focus = {																																					
+		id = AFG_expand_the_ports_of_the_West
+		icon = GFX_z_goal_islamic_schools
+		cost = 7.2
+		x = 1
+		y = 1
+		prerequisite = { focus = AFG_equalize_east_and_west }
+		relative_position_id = AFG_equalize_east_and_west
+		search_filters = {  }
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus AFG_expand_the_ports_of_the_West"
+		}
+	}
+	
+	focus = {																																					
+		id = AFG_red_shirts
+		icon = GFX_z_goal_islamic_schools
+		cost = 7.2
+		x = 2
+		y = 0
+		prerequisite = { focus = AFG_betting_on_Tribes }
+		relative_position_id = AFG_support_for_the_anti_colonial_struggle_in_Waziristan
+		mutually_exclusive = { focus = AFG_support_for_the_anti_colonial_struggle_in_Waziristan }
+		search_filters = {  }
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus AFG_red_shirts"
+		}
+	}
+	
+	focus = {																																					
+		id = AFG_easing_of_tax_charges
+		icon = GFX_z_goal_islamic_schools
+		cost = 7.2
+		x = -2
+		y = 0
+		prerequisite = { focus = AFG_return_of_Amanulla }
+		relative_position_id = AFG_return_to_Pan_Islamism
+		search_filters = {  }
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus AFG_easing_of_tax_charges"
 		}
 	}
 }   
