@@ -1,0 +1,1296 @@
+﻿add_namespace = NW_AFG
+add_namespace = NW_AFG_SOV
+add_namespace = NW_AFG_disarm
+
+country_event = {				###Сопротивление разоружению###
+    id = NW_AFG_disarm.0
+	title = NW_AFG_disarm.0.t
+    desc = NW_AFG_disarm.0.d
+    
+	is_triggered_only = yes
+	fire_only_once = no
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NW_AFG_disarm.0" }
+	trigger = {
+	}
+    option = {
+        name = NW_AFG_disarm.0.a
+		set_temp_variable_to_random = {
+			var = AFG_random_manpower
+			min = 70
+			max = 112
+			integer = yes
+		}
+		add_manpower = AFG_random_manpower
+		add_war_support = -0.02
+		add_political_power = -4
+		custom_effect_tooltip = NW_AFG_disarm_bad_tt
+		random_controlled_state = {
+			limit = { has_state_flag = AFG_demilitarize_state_flag }
+			add_to_variable = {
+				var = AFG_demilitarize_state
+				value = -1
+				tooltip = AFG_minus_to_demilitarize_state_tt
+			}
+			clamp_variable = {
+				var = AFG_demilitarize_state
+				min = 0
+				max = 4
+			}
+			clr_state_flag = AFG_demilitarize_state_flag
+			if = {
+				limit = { OR = { state = 415 state = 947 state = 948 state = 950 } }
+				ROOT = {
+					add_to_variable = {
+						var = AFG_Pashtun_tension
+						value = 10
+						tooltip = AFG_plus_to_Pashtun_tension_tt
+					}
+					AFG_Pashtun_tension_check_effect = yes
+				}
+			}
+			if = {
+				limit = { state = 267 }
+				ROOT = {
+					add_to_variable = {
+						var = AFG_Pashtun_tension
+						value = 10
+						tooltip = AFG_plus_to_Pashtun_tension_tt
+					}
+					AFG_Pashtun_tension_check_effect = yes
+					add_to_variable = {
+						var = AFG_Tajiks_tension
+						value = 10
+						tooltip = AFG_plus_to_Tajiks_tension_tt
+					}
+					AFG_Tajiks_tension_check_effect = yes
+					add_to_variable = {
+						var = AFG_Hoz_tension
+						value = 10
+						tooltip = AFG_plus_to_Hoz_tension_tt
+					}
+					AFG_Hoz_tension_check_effect = yes
+				}
+			}
+			if = {
+				limit = { state = 949 } 
+				ROOT = {
+					add_to_variable = {
+						var = AFG_Hoz_tension
+						value = 10
+						tooltip = AFG_plus_to_Hoz_tension_tt
+					}
+					AFG_Hoz_tension_check_effect = yes
+				}
+			}
+			if = {
+				limit = { OR = { state = 946 state = 951 state = 952 } } 
+				ROOT = {
+					add_to_variable = {
+						var = AFG_Tajiks_tension
+						value = 10
+						tooltip = AFG_plus_to_Tajiks_tension_tt
+					}
+					AFG_Tajiks_tension_check_effect = yes
+				}
+			}
+		}
+	}
+}
+
+country_event = {				###Разоружение имеет небольшой успех###
+    id = NW_AFG_disarm.1
+	title = NW_AFG_disarm.1.t
+    desc = NW_AFG_disarm.1.d
+    
+	is_triggered_only = yes
+	fire_only_once = no
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NW_AFG_disarm.1" }
+	trigger = {
+	}
+    option = {
+        name = NW_AFG_disarm.1.a	
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 30
+		}
+		add_stability = -0.005
+		custom_effect_tooltip = NW_AFG_disarm_good_and_bad_tt #kek
+		random_controlled_state = {
+			limit = { has_state_flag = AFG_demilitarize_state_flag }
+			add_to_variable = {
+				var = AFG_demilitarize_state
+				value = 1
+				tooltip = AFG_plus_to_demilitarize_state_tt
+			}
+			clamp_variable = {
+				var = AFG_demilitarize_state
+				min = 0
+				max = 4
+			}
+			clr_state_flag = AFG_demilitarize_state_flag
+			if = {
+				limit = { check_variable = { AFG_demilitarize_state > 3 } }
+				ROOT = {
+					add_to_variable = {
+						var = AFG_num_of_demilitarized_state
+						value = 1
+					}
+				}
+			}
+			if = {
+				limit = { OR = { state = 415 state = 947 state = 948 state = 950 } } 
+				ROOT = {
+					add_to_variable = {
+						var = AFG_Pashtun_tension
+						value = 5
+						tooltip = AFG_plus_to_Pashtun_tension_tt
+					}
+					AFG_Pashtun_tension_check_effect = yes
+				}
+			}
+			if = {
+				limit = { state = 267 } 
+				ROOT = {
+					add_to_variable = {
+						var = AFG_Pashtun_tension
+						value = 5
+						tooltip = AFG_plus_to_Pashtun_tension_tt
+					}
+					AFG_Pashtun_tension_check_effect = yes
+					add_to_variable = {
+						var = AFG_Tajiks_tension
+						value = 5
+						tooltip = AFG_plus_to_Tajiks_tension_tt
+					}
+					AFG_Tajis_tension_check_effect = yes
+					add_to_variable = {
+						var = AFG_Hoz_tension
+						value = 5
+						tooltip = AFG_plus_to_Hoz_tension_tt
+					}
+					AFG_Hoz_tension_check_effect = yes
+				}
+			}
+			if = {
+				limit = { state = 949 } 
+				ROOT = {
+					add_to_variable = {
+						var = AFG_Hoz_tension
+						value = 5
+						tooltip = AFG_plus_to_Hoz_tension_tt
+					}
+					AFG_Hoz_tension_check_effect = yes
+				}
+			}
+			if = {
+				limit = { OR = { state = 946 state = 951 state = 952 } } 
+				ROOT = {
+					add_to_variable = {
+						var = AFG_Tajiks_tension
+						value = 5
+						tooltip = AFG_plus_to_Tajiks_tension_tt
+					}
+					AFG_Tajiks_tension_check_effect = yes
+				}
+			}
+		}
+	}
+}
+
+country_event = {				###Успешное разоружение###
+    id = NW_AFG_disarm.2
+	title = NW_AFG_disarm.2.t
+    desc = NW_AFG_disarm.2.d
+    
+	is_triggered_only = yes
+	fire_only_once = no
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NW_AFG_disarm.2" }
+	trigger = {
+	}
+    option = {
+        name = NW_AFG_disarm.2.a	
+		set_temp_variable_to_random = {
+			var = AFG_random_manpower
+			min = 120
+			max = 165
+			integer = yes
+		}
+		add_manpower = AFG_random_manpower
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 60
+		}
+		add_stability = -0.005
+		custom_effect_tooltip = NW_AFG_disarm_good_tt 
+		random_controlled_state = {
+			limit = { has_state_flag = AFG_demilitarize_state_flag }
+			add_to_variable = {
+				var = AFG_demilitarize_state
+				value = 2
+				tooltip = AFG_plus_to_demilitarize_state_tt
+			}
+			clamp_variable = {
+				var = AFG_demilitarize_state
+				min = 0
+				max = 4
+			}
+			clr_state_flag = AFG_demilitarize_state_flag
+			if = {
+				limit = { check_variable = { AFG_demilitarize_state > 3 } } 
+				ROOT = {
+					add_to_variable = {
+						var = AFG_num_of_demilitarized_state
+						value = 1
+					}
+				}
+			}
+			if = {
+				limit = { OR = { state = 415 state = 947 state = 948 state = 950 } } 
+				ROOT = {
+					add_to_variable = {
+						var = AFG_Pashtun_tension
+						value = -3
+						tooltip = AFG_minus_to_Pashtun_tension_tt
+					}
+					AFG_Pashtun_tension_check_effect = yes
+				}
+			}
+			if = {
+				limit = { state = 267 } 
+				ROOT = {
+					add_to_variable = {
+						var = AFG_Pashtun_tension
+						value = -3
+						tooltip = AFG_minus_to_Pashtun_tension_tt
+					}
+					AFG_Pashtun_tension_check_effect = yes
+					add_to_variable = {
+						var = AFG_Tajiks_tension
+						value = -3
+						tooltip = AFG_minus_to_Tajiks_tension_tt
+					}
+					AFG_Tajiks_tension_check_effect = yes
+					add_to_variable = {
+						var = AFG_Hoz_tension
+						value = -3
+						tooltip = AFG_minus_to_Hoz_tension_tt
+					}
+					AFG_Hoz_tension_check_effect = yes
+				}
+			}
+			if = {
+				limit = { state = 949 } 
+				ROOT = {
+					add_to_variable = {
+						var = AFG_Hoz_tension
+						value = -3
+						tooltip = AFG_minus_to_Hoz_tension_tt
+					}
+					AFG_Hoz_tension_check_effect = yes
+				}
+			}
+			if = {
+				limit = { OR = { state = 946 state = 951 state = 952 } } 
+				ROOT = {
+					add_to_variable = {
+						var = AFG_Tajiks_tension
+						value = -3
+						tooltip = AFG_minus_to_Tajiks_tension_tt
+					}
+					AFG_Tajis_tension_check_effect = yes
+				}
+			}
+		}
+	}
+}
+
+country_event = {				###Путь к независимости###
+    id = NW_AFG.0
+	title = NW_AFG.0.t
+    desc = NW_AFG.0.d
+    
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NW_AFG.0" }
+	trigger = {
+	}
+    option = {
+        name = NW_AFG.0.a	
+		add_stability = -0.01
+	}
+}
+
+country_event = {				###Открытие телеграфной линии с Ираном###
+    id = NW_AFG.1
+	title = NW_AFG.1.t
+    desc = NW_AFG.1.d
+    
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NW_AFG.1" }
+	trigger = {
+	}
+    option = {
+        name = NW_AFG.1.a	
+		950 = {
+			add_building_construction = {
+			type = hospital
+			level = 1
+			instant_build = yes		
+			}
+		}
+	}
+}
+
+country_event = {				###Удаление дивок после войн###
+	id = NW_AFG.2
+	hidden = yes
+	
+	trigger = {
+		original_tag = AFG
+		has_war = no
+		OR = {
+			has_template = "Irregular Cavalry Division"
+			has_template = "Irregular Cavalry Division Upgraded"
+		}
+	}
+	
+	mean_time_to_happen = { days = 5 }
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NW_AFG.2" }
+	immediate = {
+		if = {
+			limit = { has_template = "Irregular Cavalry Division" } 
+			delete_unit_template_and_units = { division_template = "Irregular Cavalry Division" }
+			clr_country_flag = AFG_to_convene_a_tribal_militia_2_tt
+		}
+		else = {
+			delete_unit_template_and_units = { division_template = "Irregular Cavalry Division Upgraded" }
+			clr_country_flag = AFG_to_convene_a_tribal_militia_2_tt
+		}
+	}
+}
+
+country_event = {				###Свержение Хашим хана###
+    id = NW_AFG.3
+	title = NW_AFG.3.t
+    desc = NW_AFG.3.d
+    
+	fire_only_once = yes
+	mean_time_to_happen = { days = 5 }
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NW_AFG.3" }
+	trigger = {	
+		check_variable = { AFG_fashist_influence > 85 }
+		power_balance_value = {
+			id = AFG_power_balance
+			value < -0.2
+		}
+	}
+    option = {
+        name = NW_AFG.3.a	
+		complete_national_focus = AFG_overthrow_of_Hashim_Khan
+		retire_country_leader = yes
+		add_country_leader_role = {
+			character = AFG_Ali_Muhammed_Lamari
+			promote_leader = yes
+			country_leader = {
+				ideology = nationalism_ideology
+				expire = "1965.1.1.1"
+				traits = { prince_of_terror }
+			}
+		}
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = no
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.55
+		}
+		add_stability = -0.1
+	}
+}
+
+country_event = {				###Смещение Хашим хана###
+    id = NW_AFG.4
+	title = NW_AFG.4.t
+    desc = NW_AFG.4.d
+    
+	fire_only_once = yes
+	mean_time_to_happen = { days = 5 }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NW_AFG.4" }
+	trigger = {
+		has_government = monarchy
+		has_stability < 0.6
+		has_completed_focus = AFG_the_great_executioner
+		power_balance_value = {
+			id = AFG_power_balance
+			value < -0.9
+		}
+	}
+    option = {
+        name = NW_AFG.4.a	
+		unlock_national_focus = AFG_displace_Hashim_han
+		retire_country_leader = yes
+		add_country_leader_role = {
+			character = AFG_Shah_Mahmud_Khan
+			promote_leader = yes
+			country_leader = {
+				ideology = absolute_monarchy
+				expire = "1965.1.1.1"
+				traits = { modernizer AFG_supporter_of_democratic_principles }
+			}
+		}
+	}
+}
+
+country_event = {				###Подготовка басмаческих банд###
+    id = NW_AFG.5
+	title = NW_AFG.5.t
+    desc = NW_AFG.5.d
+    
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NW_AFG.5" }
+	trigger = {
+	}
+    option = {
+        name = NW_AFG.5.a
+		ai_chance = {
+			factor = 2
+		}		
+		add_to_variable = {
+			var = AFG_fashist_influence
+			value = -5
+			tooltip = AFG_minus_to_fashist_influence_tt
+		}
+		AFG_fashist_influence_check_effect = yes
+		custom_effect_tooltip = AFG_preparation_of_Basmach_gangs_tt
+	}
+	option = {
+        name = NW_AFG.5.b	
+		ai_chance = {
+			factor = 2
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		add_to_variable = {
+			var = AFG_fashist_influence
+			value = 5
+			tooltip = AFG_plus_to_fashist_influence_tt
+		}
+		AFG_fashist_influence_check_effect = yes
+		set_country_flag = AFG_Basmachi_is_supported
+		hidden_effect = {
+			SOV = { country_event = { id = NW_AFG_SOV.0 days = 9 } }
+		}
+	}
+}
+
+country_event = {				###Налёт басмачей для SOV###
+    id = NW_AFG_SOV.0
+	title = NW_AFG_SOV.0.t
+    desc = NW_AFG_SOV.0.d
+    
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NW_AFG_SOV.0" }
+	trigger = {
+	}
+    option = {
+        name = NW_AFG_SOV.0.a	
+		add_manpower = -12
+		add_stability = -0.01
+	}
+}
+
+country_event = {				###Прибытие Исмаила Балхи в Герат###
+    id = NW_AFG.6
+	title = NW_AFG.6.t
+    desc = NW_AFG.6.d
+    
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NW_AFG.6" }
+	trigger = {
+	}
+    option = {
+        name = NW_AFG.6.a
+		add_political_power = -30
+		add_popularity = {
+			ideology = monarchy
+			popularity = 0.03
+		}
+		add_to_variable = {
+			var = AFG_Hoz_tension
+			value = 5
+			tooltip = AFG_plus_to_Hoz_tension_tt
+		}
+		AFG_Hoz_tension_check_effect = yes
+	}
+	option = {
+        name = NW_AFG.6.b	
+		add_political_power = -10
+		add_power_balance_value = {
+			id = AFG_power_balance
+			value = 0.05
+			tooltip_side = AFG_ulema_council
+		}
+		hidden_effect = { country_event = { id = NW_AFG.7 days = 101 } }
+	}
+	option = {
+        name = NW_AFG.6.c	
+		add_power_balance_value = {
+			id = AFG_power_balance
+			value = -0.05
+			tooltip_side = AFG_modernists
+		}
+		set_country_flag = AFG_balhi_free
+		hidden_effect = { country_event = { id = NW_AFG.7 days = 101 } }
+		custom_effect_tooltip = AFG_balhi_free_tt
+	}
+}
+
+country_event = {				###Создание «Исламской культурной ассоциации»###
+    id = NW_AFG.7
+	title = NW_AFG.7.t
+    desc = NW_AFG.7.d
+    
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NW_AFG.7" }
+	trigger = {
+	}
+    option = {
+        name = NW_AFG.7.a
+		add_power_balance_value = {
+			id = AFG_power_balance
+			value = 0.05
+			tooltip_side = AFG_ulema_council
+		}
+		set_party_name = {
+			ideology = democratic
+			long_name = AFG_democratic_party_2_long
+			name = AFG_democratic_party_2
+		}
+		add_country_leader_role = {
+			character = AFG_Ismail_Barhi
+			promote_leader = yes
+			country_leader = {
+				ideology = conservatism
+				expire = "1965.1.1.1"
+				traits = { ICE_sayyid ICE_hater_of_fanaticism ICE_the_Khazarian }
+			}
+		}
+	}
+	option = {
+        name = NW_AFG.7.b
+		add_power_balance_value = {
+			id = AFG_power_balance
+			value = -0.05
+			tooltip_side = AFG_modernists
+		}
+		hidden_effect = { country_event = { id = NW_AFG.8 days = 630 } }	
+	}
+}
+
+country_event = { 			###Пульсар###
+	hidden = yes
+    id = NW_AFG.8
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NW_AFG.8" }
+	immediate = {
+		if = {
+			limit = {
+				has_country_flag = AFG_balhi_free
+				power_balance_value = {
+					id = AFG_power_balance
+					value < -0.2
+				}
+				OR = {
+					check_variable = { AFG_Hoz_tension > 30 }
+					check_variable = { AFG_Tajiks_tension > 30 }
+				}
+			}
+			country_event = NW_AFG.9
+		}
+		else_if = {
+			limit = {
+				OR = {
+					NOT = { has_country_flag = AFG_balhi_free }
+					NOT = {
+						check_variable = { AFG_Hoz_tension > 30 }
+						check_variable = { AFG_Tajiks_tension > 30 }
+						power_balance_value = {
+							id = AFG_power_balance
+							value < -0.2
+						}
+					}
+				}
+			}
+			country_event = NW_AFG.10
+		}
+	}
+}
+
+country_event = {				###Основание партии «Хизб Иршад»###				#FIX#
+    id = NW_AFG.9
+	title = NW_AFG.9.t
+    desc = NW_AFG.9.d
+    
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NW_AFG.9" }
+	trigger = {
+	}
+    option = {
+        name = NW_AFG.9.a
+		set_party_name = {
+			ideology = democratic
+			long_name = AFG_democratic_party_3_long
+			name = AFG_democratic_party_3
+		}
+		add_stability = 0.02
+		#add_ideas = 
+	}
+	option = {
+        name = NW_AFG.9.b
+		set_party_name = {
+			ideology = democratic
+			long_name = AFG_democratic_party_3_long
+			name = AFG_democratic_party_3
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.05
+		}
+		hidden_effect = { country_event = { id = NW_AFG.23 days = 30 } }
+	}
+}
+
+country_event = {				###Убийство###									#FIX#
+    id = NW_AFG.23
+	title = NW_AFG.23.t
+    desc = NW_AFG.23.d
+    
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NW_AFG.23" }
+	trigger = {
+	}
+    option = {
+        name = NW_AFG.23.a
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.05
+		}
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.25
+		}
+		set_politics = {
+			ruling_party = neutrality
+			elections_allowed = no
+		}
+		add_country_leader_role = {
+			character = AFG_Ismail_Barhi
+			promote_leader = yes
+			country_leader = {
+				ideology = moderatism
+				expire = "1965.1.1.1"
+				traits = { ICE_sayyid ICE_hater_of_fanaticism ICE_the_Khazarian }
+			}
+		}
+		#set_cosmetic_tag = AFG_Balhi
+		#complete_national_focus = 
+	}
+}
+
+country_event = {				###Попытка основания партии «Хизб Иршад»###
+    id = NW_AFG.10
+	title = NW_AFG.10.t
+    desc = NW_AFG.10.d
+    
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NW_AFG.10" }
+	trigger = {
+	}
+    option = {
+        name = NW_AFG.10.a
+		add_popularity = {
+			ideology = monarchy
+			popularity = -0.02
+		}
+		add_to_variable = {
+			var = AFG_Tajiks_tension
+			value = 2
+			tooltip = AFG_plus_to_Tajiks_tension_tt
+		}
+		AFG_Tajiks_tension_check_effect = yes
+	}
+}
+
+country_event = { 			###Пульсар###
+	hidden = yes
+    id = NW_AFG.11
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NW_AFG.11" }
+	immediate = {
+		if = {
+			limit = { has_war = no }
+			random_list = {
+				50 = {
+					country_event = { id = NW_AFG.12 } 
+				}
+				50 = {
+					country_event = { id = NW_AFG.13 } 
+				}
+			}
+		}
+	}
+}
+
+country_event = {				###Разочарование племён###
+    id = NW_AFG.12
+	title = NW_AFG.12.t
+    desc = NW_AFG.12.d
+    
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NW_AFG.12" }
+	trigger = {
+	}
+    option = {
+        name = NW_AFG.12.a
+		add_to_variable = {
+			var = AFG_Pashtun_tension
+			value = 5
+			tooltip = AFG_plus_to_Pashtun_tension_tt
+		}
+		AFG_Pashtun_tension_check_effect = yes
+	}
+}
+
+country_event = {				###Нападение на военный пост###
+    id = NW_AFG.13
+	title = NW_AFG.13.t
+    desc = NW_AFG.13.d
+    
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NW_AFG.13" }
+	trigger = {
+	}
+    option = {
+        name = NW_AFG.13.a
+		add_to_variable = {
+			var = AFG_Pashtun_tension
+			value = 10
+			tooltip = AFG_plus_to_Pashtun_tension_tt
+		}
+		AFG_Pashtun_tension_check_effect = yes
+		set_temp_variable_to_random = {
+			var = AFG_random_manpower
+			min = -77
+			max = -6
+			integer = yes
+		}
+		add_manpower = AFG_random_manpower
+	}
+}
+
+country_event = {				###Восстание Шами Пира###
+    id = NW_AFG.14
+	title = NW_AFG.14.t
+    desc = NW_AFG.14.d
+    
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NW_AFG.14" }
+	trigger = {
+	}
+    option = {
+        name = NW_AFG.14.a
+		add_manpower = -1962
+		add_stability = -0.05
+		add_to_variable = {
+			var = AFG_Pashtun_tension
+			value = 20
+			tooltip = AFG_plus_to_Pashtun_tension_tt
+		}
+		AFG_Pashtun_tension_check_effect = yes
+	}
+}
+
+country_event = { 			###Пульсар###
+	hidden = yes
+    id = NW_AFG.15
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NW_AFG.15" }
+	immediate = {
+		if = {
+			limit = { NOT = { has_country_leader = { character = AFG_Ismail_Barhi ruling_only = yes } } }
+			country_event = { id = NW_AFG.16 } 
+		}
+		if = {
+			limit = { OR = { has_country_leader = { character = AFG_Ismail_Barhi ruling_only = yes } has_country_flag = AFG_tribal_war_1_flag } }
+			country_event = { id = NW_AFG.17 } 
+		}
+		set_variable = { AFG_Pashtun_tension = 10 }
+		AFG_Pashtun_tension_check_effect = yes
+	}
+}
+
+country_event = {				###Племенное восстание###
+    id = NW_AFG.16
+	title = NW_AFG.16.t
+    desc = NW_AFG.16.d
+    
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NW_AFG.16" }
+	immediate = { 
+		hidden_effect = {
+			start_civil_war = {
+				ideology = monarchy
+				size = 0.5
+				army_ratio = 0.5
+				navy_ratio = 0.5
+				air_ratio = 0.5
+				keep_political_leader = yes
+				keep_all_characters = yes
+				PREV = { 
+					AFG_Mirza_Ali_Han = { set_nationality = PREV.PREV }												#every modernists person#
+					AFG_Mirsa_Ali_Muhammad = { set_nationality = PREV.PREV }
+					AFG_Abdul_Majid_Zabuli = { set_nationality = PREV.PREV }
+					AFG_Humaira_Begum = { set_nationality = PREV.PREV }
+					AFG_Mohammed_Naim_Khan = { set_nationality = PREV.PREV }
+					AFG_Muhammad_Kabir_Khan = { set_nationality = PREV.PREV }
+					AFG_Shah_Mahmud_Khan = { set_nationality = PREV.PREV }
+					AFG_Abdur_Rahim_Khan = { set_nationality = PREV.PREV }
+					AFG_Mohammad_Gul_han_Momand = { set_nationality = PREV.PREV }
+					every_core_state = {
+						limit = { NOT = { state = 267 check_variable = { AFG_demilitarize_state > 3 } } }
+						transfer_state_to = PREV.PREV
+					}
+					teleport_armies = {
+						to_state_array = controlled_states
+					}
+				}
+				add_country_leader_role = {
+					character = AFG_Mirza_Ali_Han
+					promote_leader = yes
+					country_leader = {
+						ideology = absolute_monarchy
+						expire = "1965.1.1.1"
+						traits = { AFG_Fakir_Ipi }
+					}
+				}
+				add_field_marshal_role = {
+					character = AFG_Mirza_Ali_Han
+					skill = 2
+					attack_skill = 2
+					defense_skill = 2
+					planning_skill = 1
+					logistics_skill = 3
+				}
+				load_focus_tree = { tree = AFG_focus keep_completed = yes }
+				complete_national_focus = AFG_overthrow_of_Hashim_Khan
+			}
+		}
+	}
+	trigger = {
+	}
+    option = {
+        name = NW_AFG.16.a
+		set_country_flag = AFG_tribal_war_1_flag 
+		custom_effect_tooltip = AFG_tribal_war_1_tt
+	}
+	option = {
+        name = NW_AFG.16.b
+		set_country_flag = AFG_tribal_war_1_flag 
+		custom_effect_tooltip = AFG_tribal_war_2_tt
+		effect_tooltip = { complete_national_focus = AFG_overthrow_of_Hashim_Khan }
+		hidden_effect = {
+			random_other_country = {
+				limit = { 
+					original_tag = ROOT 
+					has_government = monarchy
+				}
+				change_tag_from = ROOT
+			}
+		}
+	}
+}
+
+country_event = {				###Племенное восстание II###
+    id = NW_AFG.17
+	title = NW_AFG.17.t
+    desc = NW_AFG.17.d
+    
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NW_AFG.17" }
+	immediate = { 
+		hidden_effect = {
+			start_civil_war = {
+				ideology = neutrality
+				states = { 948 947 952 }
+				size = 0.5
+				army_ratio = 0.5
+				navy_ratio = 0.5
+				air_ratio = 0.5
+				keep_political_leader = yes
+				keep_all_characters = yes
+				PREV = { 
+					AFG_Fazl_Omar_Modjaddidi = { set_nationality = PREV.PREV }												#every ulema person#
+					AFG_Mir_Ali_Ahmad_Khojat = { set_nationality = PREV.PREV }
+					AFG_Shah_Wali_Khan = { set_nationality = PREV.PREV }
+					AFG_Ali_Muhammed_Lamari = { set_nationality = PREV.PREV }
+					teleport_armies = {
+						to_state_array = controlled_states
+					}
+				}
+				promote_character = AFG_Fazl_Omar_Modjaddidi
+				remove_advisor_role = {
+					character = "AFG_Fazl_Omar_Modjaddidi"
+					slot = political_advisor
+				}
+			}
+		}
+	}
+	trigger = {
+	}
+    option = {
+        name = NW_AFG.17.a
+		custom_effect_tooltip = AFG_tribal_war_3_tt
+	}
+	option = {
+        name = NW_AFG.17.b
+		custom_effect_tooltip = AFG_tribal_war_4_tt
+		hidden_effect = {
+			random_other_country = {
+				limit = { 
+					original_tag = ROOT 
+					has_government = neutrality
+				}
+				change_tag_from = ROOT
+			}
+		}
+	}
+}
+
+country_event = {				###Восстание в Хазараджате###
+    id = NW_AFG.22
+	title = NW_AFG.22.t
+    desc = NW_AFG.22.d
+    
+	is_triggered_only = yes
+	fire_only_once = no
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NW_AFG.22" }
+	immediate = { 
+		set_variable = { AFG_Hoz_tension = 10 }
+		AFG_Hoz_tension_check_effect = yes
+		hidden_effect = {
+			create_dynamic_country = {
+				original_tag = ROOT
+				copy_tag = ROOT
+				add_popularity = {
+					ideology = neutrality
+					popularity = 1
+				}
+				set_politics = {
+					ruling_party = neutrality
+					elections_allowed = no
+				}
+				set_cosmetic_tag = AFG_hazarajat
+				ROOT = {
+					every_core_state = {
+						limit = { NOT = { is_core_of = PREV } }
+						add_core_of = PREV
+					}
+				}
+				random_other_country = {
+					limit = { has_character = AFG_Ibragim_Gausavar } 
+					set_nationality = {
+						target_country = PREV
+						character = AFG_Ibragim_Gausavar
+					}
+				}
+				add_country_leader_role = {
+					character = AFG_Ibragim_Gausavar
+					promote_leader = yes
+					country_leader = {
+						ideology = wahhabism_neutrality
+						expire = "1965.1.1.1"
+						traits = { AFG_son_of_a_bull_rider }
+					}
+				}
+				transfer_state = 949
+				if = {
+					limit = { NOT = { has_template = "Cavalry Division" } }
+					division_template = {
+						name = "Cavalry Division"	
+						is_locked = yes
+						division_names_group = AFG_INF_01
+						regiments = {
+							cavalry = { x = 0 y = 0 }
+							cavalry = { x = 0 y = 1 }
+							cavalry = { x = 1 y = 0 }
+							cavalry = { x = 1 y = 1 }
+						}
+					}
+				}
+				949 = {
+					create_unit = {
+						division = "division_template = \"Cavalry Division\" start_experience_factor = 0.1 start_equipment_factor = 0.3"
+						owner = PREV
+						count = 4
+					}
+				}
+				every_other_country = {
+					limit = { original_tag = ROOT }
+					PREV = {
+						declare_war_on = {
+							target = PREV
+							type = civil_war
+						}
+						add_civil_war_target = PREV
+					}
+					add_civil_war_target = PREV
+				}
+			}
+		}
+	}
+	trigger = {
+	}
+    option = {
+        name = NW_AFG.22.a
+		custom_effect_tooltip = AFG_tribal_war_5_tt
+	}
+	option = {
+        name = NW_AFG.22.b
+		custom_effect_tooltip = AFG_tribal_war_6_tt
+		hidden_effect = {
+			random_other_country = {
+				limit = { 
+					original_tag = ROOT 
+					has_government = neutrality
+				}
+				change_tag_from = ROOT
+			}
+		}
+	}
+}
+
+country_event = {				###Восстание таджиков###
+    id = NW_AFG.18
+	title = NW_AFG.18.t
+    desc = NW_AFG.18.d
+    
+	is_triggered_only = yes
+	fire_only_once = no
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NW_AFG.18" }
+	trigger = {
+	}
+    option = {
+        name = NW_AFG.18.a
+		set_variable = { AFG_Tajiks_tension = 20 }
+		AFG_Tajiks_tension_check_effect = yes
+		set_country_flag = AFG_the_Uprising_of_the_Daryl_speaking_peoples_flag
+		every_core_state = {
+			limit = {
+				is_controlled_by = ROOT
+				OR = {
+					state = 415
+					state = 952
+					state = 951
+					state = 946
+				}
+			}
+			add_dynamic_modifier = { modifier = AFG_the_Uprising_of_the_Daryl_speaking_peoples }
+		}
+		unlock_decision_tooltip = AFG_send_an_army_to_suppress_the_Tajiks
+		activate_mission = AFG_the_Uprising_of_the_Daryl_speaking_peoples_mission
+	}
+}
+
+country_event = {				###Молодые представители клана требуют ослабления цензуры###
+    id = NW_AFG.19
+	title = NW_AFG.19.t
+    desc = NW_AFG.19.d
+    
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NW_AFG.19" }
+	trigger = {
+	}
+    option = {
+        name = NW_AFG.19.a
+		add_power_balance_value = {
+			id = AFG_power_balance
+			value = -0.05
+			tooltip_side = AFG_modernists
+		}
+		swap_ideas = {
+			remove_idea = AFG_censorship_of_the_press_idea
+			add_idea = AFG_censorship_of_the_press_idea_1
+		}
+	}
+	option = {
+        name = NW_AFG.19.b
+		add_power_balance_value = {
+			id = AFG_power_balance
+			value = 0.05
+			tooltip_side = AFG_ulema_council
+		}
+	}
+}
+
+country_event = {				###Пуштуны бросили своё хозяйство###
+    id = NW_AFG.20
+	title = NW_AFG.20.t
+    desc = NW_AFG.20.d
+    
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NW_AFG.20" }
+	trigger = {
+	}
+    option = {
+        name = NW_AFG.20.a
+		add_to_variable = {
+			var = AFG_Tajiks_tension
+			value = 5
+			tooltip = AFG_plus_to_Tajiks_tension_tt
+		}
+		AFG_Tajiks_tension_check_effect = yes
+		add_stability = -0.04
+		951 = { add_manpower = -15000 }
+		947 = { add_manpower = 15000 }
+	}
+}
+
+country_event = {				###Провал золотодобычи###
+    id = NW_AFG.21
+	title = NW_AFG.21.t
+    desc = NW_AFG.21.d
+    
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NW_AFG.21" }
+	trigger = {
+	}
+    option = {
+        name = NW_AFG.21.a
+		add_timed_idea = {
+			idea = AFG_gold_mining_failure
+			days = 70
+		}
+	}
+}
+
+country_event = {				###Договор о нейтралитете с СССР###
+    id = NW_AFG.24
+	title = NW_AFG.24.t
+    desc = NW_AFG.24.d
+    
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NW_AFG.24" }
+	trigger = {
+		SOV = {
+			exists = yes
+			NOT = { has_war_with = ROOT }
+			has_civil_war = no
+		}
+	}
+    option = {
+        name = NW_AFG.24.a
+		set_country_flag = AFG_transit_Trade_Agreement_with_the_USSR_flag
+		unlock_national_focus = AFG_transit_Trade_Agreement_with_the_USSR
+	}
+	option = {
+        name = NW_AFG.24.b
+		diplomatic_relation = {
+			country = SOV
+			relation = non_aggression_pact
+			active = no
+		}
+	}
+}
+
+country_event = {				###Концессия США###
+    id = NW_AFG.25
+	title = NW_AFG.25.t
+    desc = NW_AFG.25.d
+    
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NW_AFG.25" }
+	trigger = {
+		USA = {
+			exists = yes
+			NOT = { has_war_with = ROOT }
+			has_civil_war = no
+		}
+	}
+    option = {
+        name = NW_AFG.25.a
+		add_political_power = 100
+		add_ideas = Inland_Exploration_Company_idea
+		hidden_effect = { country_event = { id = NW_AFG.26 days = 275 } }
+	}
+	option = {
+        name = NW_AFG.25.b
+	}
+}
+
+country_event = {				###Отмена концессии###
+    id = NW_AFG.26
+	title = NW_AFG.26.t
+    desc = NW_AFG.26.d
+    
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NW_AFG.26" }
+	trigger = {
+	}
+    option = {
+        name = NW_AFG.26.a
+		remove_ideas = Inland_Exploration_Company_idea
+	}
+}
+
+country_event = {				###Смерть Шады-Огры###
+    id = NW_AFG.27
+	title = NW_AFG.27.t
+    desc = NW_AFG.27.d
+    
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NW_AFG.27" }
+	trigger = {
+	}
+    option = {
+        name = NW_AFG.27.a
+		add_manpower = -6
+		custom_effect_tooltip = AFG_Sadi_Ogri_tt
+		show_ideas_tooltip = AFG_Sadi_Ogri
+		show_unit_leaders_tooltip = AFG_Sadi_Ogri
+		hidden_effect = { retire_character = AFG_Sadi_Ogri }
+	}
+}
